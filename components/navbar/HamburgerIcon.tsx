@@ -1,4 +1,4 @@
-import { HamburgerIconLine, HamburgerIconWrapper } from "./styles/HamburgerIcon.styled"
+import { HamburgerIconLine, HamburgerIconWrapper } from "./HamburgerMenu.styled"
 
 const HamburgerIcon = () => {
   return (

@@ -1,4 +1,32 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const shiftRight = keyframes`
+  50% {
+    transform: translateX(0px);
+  }
+`
+
+export const HamburgerIconWrapper = styled.div`
+  width: 15px;
+  height: 11.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: hidden;
+  >:first-child {
+    transform: translateX(-3px);
+  }
+  >:last-child {
+    transform: translateX(-6px);
+  }
+`
+
+export const HamburgerIconLine = styled.span`
+  width: 15px;
+  height: 2px;
+  background-color: blue;
+`
 
 export const NavbarButton = styled.div`
   border: 1px solid red;
@@ -7,6 +35,13 @@ export const NavbarButton = styled.div`
   border-radius: 3px;
   &:hover {
     background-color: red;
+    border-radius: 3px;
+    span:first-child {
+      animation: ${shiftRight} 300ms;
+    }
+    span:last-child {
+      animation: ${shiftRight} 500ms;
+    }
   }
 `
 
@@ -32,5 +67,6 @@ export const MenuItem = styled.div`
   cursor: pointer;
   &:hover {
     background-color: yellowgreen;
+    border-radius: 3px;
   }
 `
