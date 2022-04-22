@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 interface TopbarWrapperProps {
   isMinimize: boolean
@@ -9,13 +9,13 @@ export const TopbarWrapper = styled.div<TopbarWrapperProps>`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  backdrop-filter: blur(0.8px);
+  backdrop-filter: blur(3px);
   right: 0;
   left: 0;
   top: 0;
-  background-color: rgb(240,124,93, 0.75);
-  box-shadow: ${props => props.isMinimize ? '0 1px 4px -1px' : ''};
-  padding: ${props => props.isMinimize ? '10px 15px' : '20px 15px'};
+  background-color: var;
+  box-shadow: ${props => props.isMinimize ? '0 2px 4px -1px' : ''};
+  padding: ${props => props.isMinimize ? '16px 15px' : '20px 15px'};
   transition: padding 500ms;
 `
 
@@ -29,8 +29,8 @@ interface SettingWrapperProps {
 export const SettingWrapper = styled.span<SettingWrapperProps>`
   cursor: pointer;
   font-size: 12px;
-  /* font-weight: bold; */
-  color: ${props => props.isActive ? 'red' : 'black'};
+  font-weight: 500;
+  color: ${props => props.isActive ? 'var(--red)' : 'white'};
   &::after {
     display: inline;
     content: "${props => props.content}";

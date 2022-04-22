@@ -28,7 +28,7 @@ export const NameWrapper = styled.div`
   font-size: 20px;
   letter-spacing: -2.0px;
   font-weight: 400;
-  color: white;
+  color: var(--red);
   &::before {
     content: "Dao";
     animation: ${shiftRight} 400ms;
@@ -42,27 +42,35 @@ export const NameWrapper = styled.div`
 
 const leftBorderFadeIn = keyframes`
   100% {
-    border: 2px solid white;
+    border: 2px solid var(--red);
     border-top: none;
     border-right: none;
-    height: 40px;
-    width: 90px;
+    height: 20px;
+    width: 70px;
   }
 `
 
 const rightBorderFadeIn = keyframes`
   100% {
-    border: 2px solid white;
+    border: 2px solid var(--red);
     border-bottom: none;
     border-left: none;
-    height: 40px;
-    width: 90px;
+    height: 20px;
+    width: 70px;
+  }
+`
+
+const breathe = keyframes`
+  50% {
+    transform: scale(1.05);
   }
 `
 
 export const LogoWrapper = styled.div`
   position: relative;
   margin-left: 20px;
+  animation: ${breathe} 5s infinite;
+  animation-delay: 700ms;
   &::before {
     position: absolute;
     content: "";

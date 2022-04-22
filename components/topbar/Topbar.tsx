@@ -5,9 +5,7 @@ import { SettingsWrapper, SettingWrapper, TopbarWrapper } from "./Topbar.styled"
 const Topbar = () => {
   const [isMinimize, setIsMinimize] = useState(false)
   const [locale, setLocale] = useState('en')
-  const [isLoad, setIsLoad] = useState(false)
   useEffect(() => {
-    setIsLoad(true)
     setIsMinimize(window.scrollY > 160)
     const onScroll = () => {
       setIsMinimize(window.scrollY > 160)
@@ -23,11 +21,11 @@ const Topbar = () => {
           <SettingWrapper
             isActive={locale == 'en'}
             isMinimize={isMinimize}
-            contentOnMinimize="En"
+            contentOnMinimize="Eng"
             content="English"
             onClick={() => setLocale('en')}
           />
-          <span className="text-xs">/</span>
+          <span className="text-xs text-white">/</span>
           <SettingWrapper
             isActive={locale == 'zh'}
             isMinimize={isMinimize}

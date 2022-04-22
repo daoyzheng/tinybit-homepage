@@ -1,5 +1,6 @@
 import Head from "next/head"
-import Topbar from "./topbar/Topbar"
+import Topbar from "../topbar/Topbar"
+import { Main } from "./Layout.styled"
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -11,9 +12,9 @@ const Layout: React.FC = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Topbar />
-      <main>
+      <Main>
         {children}
-      </main>
+      </Main>
     </>
   )
 }
