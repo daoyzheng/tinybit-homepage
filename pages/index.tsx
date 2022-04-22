@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   return (
     <div>
-      hello
+      <div className="h-screen bg-red-300 flex justify-center">
+        <div className="mt-52">hello</div>
+      </div>
+      <div className="h-52">hello</div>
     </div>
   )
 }
