@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 interface TopbarWrapperProps {
   isMinimize: boolean
@@ -61,18 +61,5 @@ export const SettingsWrapper = styled.div`
     ::before {
       margin-left: 5px;
     }
-  }
-`
-interface NameWrapperProps {
-  isMinimize: boolean
-}
-
-export const NameWrapper = styled.div<NameWrapperProps>`
-  &::after {
-    content: "Dao Zheng";
-    font-size: 25px;
-    letter-spacing: -2.5px;
-    opacity: ${props => props.isMinimize ? '0' : '1'};
-    transition: opacity 300ms;
   }
 `

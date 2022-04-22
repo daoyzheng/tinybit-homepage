@@ -1,27 +1,13 @@
-import {
-  HalfCircle,
-  HorizontalLine,
-  LetterDWrapper,
-  LetterSeparator,
-  LetterZWrapper,
-  LogoWrapper,
-  SlantedLine,
-  VerticalLine
-} from "./Logo.styled"
+import { LogoWrapper, NameWrapper } from "./Logo.styled"
 
-const Logo = () => {
+interface Props {
+  className?: string
+}
+
+const Logo = ({ className }: Props) => {
   return (
-    <LogoWrapper>
-      <LetterDWrapper>
-        <VerticalLine />
-        <HalfCircle />
-      </LetterDWrapper>
-      <LetterSeparator />
-      <LetterZWrapper>
-        <HorizontalLine />
-        <SlantedLine />
-        <HorizontalLine />
-      </LetterZWrapper>
+    <LogoWrapper className={className}>
+      <NameWrapper />
     </LogoWrapper>
   )
 }
