@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
-import { SettingWrapper, TopbarWrapper } from "./Topbar.styled"
+import { SettingsWrapper, SettingWrapper, TopbarWrapper } from "./Topbar.styled"
 
 const Topbar = () => {
   const [isMinimize, setIsMinimize] = useState(false)
   useEffect(() => {
     setIsMinimize(window.scrollY > 160)
     const onScroll = () => {
-      console.log('scrolled', window.scrollY)
       setIsMinimize(window.scrollY > 160)
     }
     window.addEventListener('scroll', onScroll)
@@ -15,12 +14,12 @@ const Topbar = () => {
   return (
     <TopbarWrapper isMinimize={isMinimize}>
       <div>Dao Zheng</div>
-      <div className="flex items-center gap-4">
-        <div className="space-x-1">
+      <div className="flex items-center gap-2">
+        <SettingsWrapper className="flex">
           <SettingWrapper isMinimize={isMinimize} contentOnMinimize="En" content="English"/>
           <span>/</span>
-          {/* <SettingWrapper content={isMinimize ? '中' : '中文'}/> */}
-        </div>
+          <SettingWrapper isMinimize={isMinimize} contentOnMinimize="中" content="中文"/>
+        </SettingsWrapper>
         <div>Light / Dark</div>
       </div>
     </TopbarWrapper>

@@ -13,7 +13,7 @@ export const TopbarWrapper = styled.div<TopbarWrapperProps>`
   left: 0;
   top: 0;
   background-color: blue;
-  padding: ${props => props.isMinimize ? '12px 15px' : '20px 15px'};
+  padding: ${props => props.isMinimize ? '10px 15px' : '20px 15px'};
   transition: padding 400ms;
 `
 
@@ -25,14 +25,34 @@ interface SettingWrapperProps {
 
 export const SettingWrapper = styled.span<SettingWrapperProps>`
   &::after {
+    display: inline;
     content: "${props => props.content}";
     opacity: ${props => props.isMinimize ? '0' : '1'};
     transition: opacity 400ms;
-    margin-left: -50px;
   }
   &::before {
+    display: inline;
     content: "${props => props.contentOnMinimize}";
     opacity: ${props => props.isMinimize ? '1' : '0'};
     transition: opacity 400ms;
+  }
+`
+
+export const SettingsWrapper = styled.div`
+  span:first-child {
+    ::after {
+      margin-right: 5px;
+    }
+    ::before {
+      margin-right: -50px;
+    }
+  }
+  span:last-child {
+    ::after {
+      margin-left: -15px;
+    }
+    ::before {
+      margin-left: 5px;
+    }
   }
 `
