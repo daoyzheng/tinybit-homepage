@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 interface TopbarWrapperProps {
   isMinimize: boolean
@@ -9,32 +9,39 @@ export const TopbarWrapper = styled.div<TopbarWrapperProps>`
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  backdrop-filter: blur(0.8px);
   right: 0;
   left: 0;
   top: 0;
-  background-color: blue;
+  background-color: rgb(240,124,93, 0.75);
+  box-shadow: ${props => props.isMinimize ? '0 1px 4px -1px' : ''};
   padding: ${props => props.isMinimize ? '10px 15px' : '20px 15px'};
-  transition: padding 400ms;
+  transition: padding 500ms;
 `
 
 interface SettingWrapperProps {
   content: string
   contentOnMinimize: string
   isMinimize: boolean
+  isActive: boolean
 }
 
 export const SettingWrapper = styled.span<SettingWrapperProps>`
+  cursor: pointer;
+  font-size: 12px;
+  /* font-weight: bold; */
+  color: ${props => props.isActive ? 'red' : 'black'};
   &::after {
     display: inline;
     content: "${props => props.content}";
     opacity: ${props => props.isMinimize ? '0' : '1'};
-    transition: opacity 400ms;
+    transition: opacity 500ms;
   }
   &::before {
     display: inline;
     content: "${props => props.contentOnMinimize}";
     opacity: ${props => props.isMinimize ? '1' : '0'};
-    transition: opacity 400ms;
+    transition: opacity 500ms;
   }
 `
 
@@ -44,7 +51,7 @@ export const SettingsWrapper = styled.div`
       margin-right: 5px;
     }
     ::before {
-      margin-right: -50px;
+      margin-right: -40px;
     }
   }
   span:last-child {
@@ -54,5 +61,18 @@ export const SettingsWrapper = styled.div`
     ::before {
       margin-left: 5px;
     }
+  }
+`
+interface NameWrapperProps {
+  isMinimize: boolean
+}
+
+export const NameWrapper = styled.div<NameWrapperProps>`
+  &::after {
+    content: "Dao Zheng";
+    font-size: 25px;
+    letter-spacing: -2.5px;
+    opacity: ${props => props.isMinimize ? '0' : '1'};
+    transition: opacity 300ms;
   }
 `
