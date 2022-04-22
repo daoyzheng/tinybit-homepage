@@ -10,12 +10,13 @@ export const TopbarWrapper = styled.div<TopbarWrapperProps>`
   align-items: center;
   position: fixed;
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   right: 0;
   left: 0;
   top: 0;
   background-color: var;
   box-shadow: ${props => props.isMinimize ? '0 2px 4px -1px' : ''};
-  padding: ${props => props.isMinimize ? '16px 15px' : '20px 15px'};
+  padding: ${props => props.isMinimize ? '16px 20px' : '20px 20px'};
   transition: padding 500ms;
 `
 
