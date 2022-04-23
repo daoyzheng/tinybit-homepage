@@ -9,12 +9,12 @@ export const TopbarWrapper = styled.div<TopbarWrapperProps>`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   right: 0;
   left: 0;
   top: 0;
-  background-color: var;
+  z-index: 1;
   box-shadow: ${props => props.isMinimize ? '0 2px 4px -1px' : ''};
   padding: ${props => props.isMinimize ? '16px 20px' : '20px 20px'};
   transition: padding 500ms;
