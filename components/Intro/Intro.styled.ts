@@ -41,7 +41,7 @@ export const IntroWrapper = styled.div`
       position: absolute;
       left: 0;
       width: 2px;
-      background-color: orange;
+      background-color: white;
     }
     ::before {
       content: "";
@@ -80,10 +80,10 @@ export const IntroWrapper = styled.div`
   & > :nth-child(3) {
     transform: translateY(10px);
     opacity: 0;
-    animation: ${fadeIn} 0.8s ease 4.6s forwards;
+    animation: ${fadeIn} 0.8s ease 4.8s forwards;
   }
   @media (min-width: 768px) {
-    h1 {
+    h1 div{
       font-size: 32px;
     }
   }
@@ -98,22 +98,6 @@ export const Highlight = styled.span`
   color: var(--red);
   font-weight: bold;
 `
-
-const doubleClick = keyframes`
-  25% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-`
-
 const scale = keyframes`
   25% {
     transform: scale(0.95);
@@ -131,21 +115,11 @@ const scale = keyframes`
 
 export const ImageWrapper = styled.div`
   opacity: 0;
-  animation: ${fadeIn} 0.8s ease 5.3s forwards, ${scale} .5s ease 6.3s forwards;
+  animation: ${fadeIn} 0.8s ease 5.3s forwards, ${scale} .5s ease 5.8s forwards;
   position: absolute;
   bottom: 0;
-  right: -30px;
-  ::before {
-    position: absolute;
-    content: "";
-    top: 18px;
-    left: 15px;
-    width: 2px;
-    height: 2px;
-    box-shadow: 0 0 3px 3px var(--red);
-    border-radius: 100px;
-    background-color: var(--red);
-    opacity: 0;
-    animation: ${doubleClick} .5s ease 6.3s forwards;
+  right: -20px;
+  @media (min-width: 1280px) {
+    right: 20px;
   }
 `
