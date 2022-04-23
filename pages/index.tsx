@@ -5,7 +5,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <div className="h-screen flex justify-center">
-        <div className="mt-48 w-full flex justify-center">
+        <div className="mt-48 w-full flex justify-center h-fit">
           <Intro/>
         </div>
       </div>
