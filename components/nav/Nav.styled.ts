@@ -12,8 +12,8 @@ const fadeIn = keyframes`
 export const NavWrapper = styled.div`
   position: fixed;
   padding: 0 10px;
-  top: 140px;
-  left: 150px;
+  top: 20%;
+  left: 10%;
   border-right: 1px solid var(--red);
   animation: ${fadeIn} 2s forwards;
   div, a{
