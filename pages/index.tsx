@@ -3,6 +3,7 @@ import { useState } from 'react'
 import About from '../components/about/About'
 import Intro from '../components/Intro/Intro'
 import Nav from '../components/nav/Nav'
+import Works from '../components/works/Works'
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
         <About/>
       </section>
       <section id="works" className="min-h-screen flex justify-center">
-        Hello
+        <Works/>
       </section>
     </div>
   )

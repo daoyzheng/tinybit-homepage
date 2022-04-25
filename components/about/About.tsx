@@ -30,7 +30,7 @@ const About = () => {
   })
   return (
     <AboutWrapper className="w-2/3" id="about-wrapper">
-      <Subheading id="about-subheading" isAnimating={isAnimating} animationDelay={0}>About me</Subheading>
+      <Subheading isAnimating={isAnimating} animationDelay={0}>About me</Subheading>
       <AboutContentWrapper className="mt-5" isAnimating={isAnimating} animationDelay={0.5}>
         Hello! My name is Dao, and I love to learn and build things for the web. I often spend my
         time building little projects that I find interesting and always trying to improve my skillsets. Currently, my role is a full-stack developer

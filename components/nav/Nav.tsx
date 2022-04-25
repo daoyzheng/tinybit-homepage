@@ -23,7 +23,7 @@ const Nav = () => {
     setOkToChange(false)
     setTimeout(() => {
       setOkToChange(true)
-    }, 500)
+    }, 800)
   }
   return (
     <NavWrapper className="space-y-3">
@@ -42,8 +42,8 @@ const Nav = () => {
           <A isSelected={currentHash === '#contacts'} onClick={() => handleHashChange('#contact')}>Contact</A>
         </Link>
       </div>
-      <div>Blog</div>
-      <div>Resume</div>
+      {/* <div>Blog</div>
+      <div>Resume</div> */}
     </NavWrapper>
   )
 }

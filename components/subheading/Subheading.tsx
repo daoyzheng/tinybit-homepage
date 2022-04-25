@@ -1,7 +1,7 @@
 import { SubheadingWrapper } from "./Subheading.styled"
 
 interface Props {
-  id: string
+  id?: string
   isAnimating: boolean
   animationDelay: number
 }
