@@ -7,7 +7,7 @@ export const AboutWrapper = styled.div`
 const fadeIn = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
@@ -29,14 +29,19 @@ export const TextHighlight = styled.span`
   color: var(--lightred);
   font-weight: 700;
 `
-
-export const TechnologiesWrapper = styled.div`
-
+interface TechnologyProps {
+  isAnimating: boolean
+  animationDelay: number
+}
+export const TechnologiesWrapper = styled.div<TechnologyProps>`
+  opacity: 0;
+  animation: ${props => props.isAnimating && css`${fadeIn} 600ms forwards ${props.animationDelay}s`};
 `
-
-export const TechnologyCategoryItem = styled.div`
+export const TechnologyCategoryItem = styled.div<TechnologyProps>`
+  opacity: 0;
   font-size: 15px;
   margin-left: 16px;
+  animation: ${props => props.isAnimating && css`${fadeIn} 600ms forwards ${props.animationDelay}s`};
   > :first-child {
     width: fit-content;
     padding-bottom: 1px;

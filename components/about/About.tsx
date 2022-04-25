@@ -39,20 +39,22 @@ const About = () => {
         When away from the computer, I like to play <TextHighlight>basketball</TextHighlight> and
         go <TextHighlight>hiking</TextHighlight> during the summer.
       </AboutContentWrapper>
-      <TechnologiesWrapper className="mt-2 space-y-3">
-        <div><TextHighlight className="text-lg">&gt;</TextHighlight> Here are some technologies that I have worked with</div>
-        <TechnologyCategoryItem>
+      <div className="mt-2 space-y-3">
+        <TechnologiesWrapper isAnimating={isAnimating} animationDelay={0.7}>
+          <TextHighlight className="text-lg">&gt;</TextHighlight> Here are some technologies that I have worked with
+        </TechnologiesWrapper>
+        <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={0.8}>
           <div>Front-end</div>
           <div>
             <div>Vue.js</div>
+            <div>Vuex</div>
             <div>React</div>
             <div>Next.js</div>
             <div>TypeScript</div>
             <div>Styled-components</div>
-            <div>Vuex</div>
           </div>
         </TechnologyCategoryItem>
-        <TechnologyCategoryItem>
+        <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1}>
           <div>Back-end</div>
           <div>
             <div>.NET</div>
@@ -61,26 +63,26 @@ const About = () => {
             <div>Strapi</div>
           </div>
         </TechnologyCategoryItem>
-        <TechnologyCategoryItem>
+        <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1.2}>
           <div>Web Services</div>
           <div>
-            <div>AWS S3</div>
             <div>Heroku</div>
+            <div>AWS S3</div>
             <div>AWS Route 53</div>
             <div>Azure Functions</div>
             <div>Azure Api Management</div>
             <div>Azure Service Bus</div>
           </div>
         </TechnologyCategoryItem>
-        <TechnologyCategoryItem>
-          <div>Project management</div>
+        <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1.4}>
+          <div>Project Management</div>
           <div>
             <div>Trello</div>
             <div>Jira</div>
             <div>Azure Devops</div>
           </div>
         </TechnologyCategoryItem>
-      </TechnologiesWrapper>
+      </div>
     </AboutWrapper>
   )
 }
