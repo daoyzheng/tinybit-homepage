@@ -14,6 +14,11 @@ const Nav = () => {
           <a>Works</a>
         </Link>
       </div>
+      <div>
+        <Link href="#contact">
+          <a>Contact</a>
+        </Link>
+      </div>
       <div>Blog</div>
       <div>Resume</div>
     </NavWrapper>

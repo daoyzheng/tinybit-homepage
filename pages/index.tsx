@@ -13,6 +13,9 @@ const Home: NextPage = () => {
       <section id="about" className="min-h-screen flex justify-center">
         <About/>
       </section>
+      <section id="works" className="min-h-screen flex justify-center">
+        Hello
+      </section>
     </div>
   )
 }

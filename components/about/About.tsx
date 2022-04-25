@@ -47,6 +47,7 @@ const About = () => {
           <div>Front-end</div>
           <div>
             <div>Vue.js</div>
+            <div>Quasar</div>
             <div>Vuex</div>
             <div>React</div>
             <div>Next.js</div>
