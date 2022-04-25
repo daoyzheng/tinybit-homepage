@@ -24,3 +24,11 @@ export const NavWrapper = styled.div`
     }
   }
 `
+
+interface AProps {
+  isSelected: boolean
+}
+
+export const A = styled.a<AProps>`
+  background-color: ${props => props.isSelected ? 'var(--red)' : ''};
+`

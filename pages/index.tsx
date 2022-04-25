@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import { useState } from 'react'
 import About from '../components/about/About'
 import Intro from '../components/Intro/Intro'
 import Nav from '../components/nav/Nav'
@@ -6,7 +7,7 @@ import Nav from '../components/nav/Nav'
 const Home: NextPage = () => {
   return (
     <div>
-      <Nav />
+      <Nav/>
       <section className="h-screen flex justify-center items-center w-full">
         <Intro/>
       </section>

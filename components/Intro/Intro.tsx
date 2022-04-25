@@ -1,8 +1,10 @@
 import Image from "next/image"
 import { useEffect } from "react"
+import useReplaceStateEvent from "../../hooks/customReplaceStateEvent"
 import { Highlight, ImageWrapper, IntroWrapper } from "./Intro.styled"
 
 const Intro = () => {
+  const triggerReplaceStateEvent = useReplaceStateEvent('')
   useEffect(() => {
     const introObserverOptions = {
       threshold: 0.8
@@ -10,8 +12,9 @@ const Intro = () => {
     const introObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          if (window.location.hash) {
-            history.pushState({}, '', '/');
+          if (window.location.hash.length > 1) {
+            history.replaceState({}, '', '/');
+            triggerReplaceStateEvent()
           }
         }
       });

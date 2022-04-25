@@ -1,8 +1,11 @@
+import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import useReplaceStateEvent from "../../hooks/customReplaceStateEvent"
 import Subheading from "../subheading/Subheading"
 import { AboutContentWrapper, AboutWrapper, TechnologiesWrapper, TechnologyCategoryItem, TextHighlight } from "./About.styled"
 
 const About = () => {
+  const triggerReplaceStateEvent = useReplaceStateEvent('#about')
   function setAboutObserver() {
     const aboutObserverOptions = {
       threshold: 0.4
@@ -12,12 +15,13 @@ const About = () => {
         if (entry.isIntersecting) {
           setIsAnimating(true)
           if (window.location.hash !== '#about') {
-            history.pushState({}, '', '#about');
+            history.pushState({}, '', '#about')
+            triggerReplaceStateEvent()
           }
         }
       });
     }, aboutObserverOptions)
-    const about = document.querySelector('#about');
+    const about = document.querySelector('#about-wrapper');
     if (about) aboutObserver.observe(about)
   }
   const [isAnimating, setIsAnimating] = useState(false)
@@ -25,7 +29,7 @@ const About = () => {
     setAboutObserver()
   })
   return (
-    <AboutWrapper className="w-2/3" id="about">
+    <AboutWrapper className="w-2/3" id="about-wrapper">
       <Subheading id="about-subheading" isAnimating={isAnimating} animationDelay={0}>About me</Subheading>
       <AboutContentWrapper className="mt-5" isAnimating={isAnimating} animationDelay={0.5}>
         Hello! My name is Dao, and I love to learn and build things for the web. I often spend my
