@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <section className="h-screen flex justify-center items-center w-full">
         <Intro/>
       </section>
-      <section id="about" className="h-screen flex justify-center">
+      <section id="about" className="min-h-screen flex justify-center">
         <About/>
       </section>
     </div>
