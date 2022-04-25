@@ -14,7 +14,6 @@ export const SubheadingWrapper = styled.div`
   background-color: var(--red);
   width: fit-content;
   font-size: 22px;
-  border-top-right-radius: 8px;
   animation: ${fadeIn} 1s forwards;
   transform: translateX(40px);
   ::after {
