@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 const fadeIn = keyframes`
   100% {
@@ -7,14 +7,19 @@ const fadeIn = keyframes`
   }
 `
 
-export const SubheadingWrapper = styled.div`
+interface SubheadingWrapperProps {
+  isAnimating: boolean
+  animationDelay: number
+}
+
+export const SubheadingWrapper = styled.div<SubheadingWrapperProps>`
   padding: 0 10px;
   opacity: 0;
   position: relative;
   background-color: var(--red);
   width: fit-content;
   font-size: 18px;
-  animation: ${fadeIn} 500ms forwards;
+  animation: ${props => props.isAnimating && css`${fadeIn} 500ms forwards ${props.animationDelay}s`};
   transform: translateX(40px);
   ::after {
     content: "";

@@ -1,8 +1,14 @@
 import { SubheadingWrapper } from "./Subheading.styled"
 
-const Subheading: React.FC = ({ children }) => {
+interface Props {
+  id: string
+  isAnimating: boolean
+  animationDelay: number
+}
+
+const Subheading: React.FC<Props> = ({ children, id, isAnimating, animationDelay }) => {
   return (
-    <SubheadingWrapper>
+    <SubheadingWrapper id={id} isAnimating={isAnimating} animationDelay={animationDelay}>
       {children}
     </SubheadingWrapper>
   )
