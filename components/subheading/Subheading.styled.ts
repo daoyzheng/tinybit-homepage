@@ -13,8 +13,8 @@ export const SubheadingWrapper = styled.div`
   position: relative;
   background-color: var(--red);
   width: fit-content;
-  font-size: 22px;
-  animation: ${fadeIn} 1s forwards;
+  font-size: 18px;
+  animation: ${fadeIn} 500ms forwards;
   transform: translateX(40px);
   ::after {
     content: "";

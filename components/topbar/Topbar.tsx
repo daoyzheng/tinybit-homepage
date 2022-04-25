@@ -15,7 +15,7 @@ const Topbar = () => {
   }, [])
   return (
     <TopbarWrapper isMinimize={isMinimize}>
-      <Logo className="cursor-pointer"/>
+      <Logo className="cursor-pointer" />
       <div className="flex items-center gap-2">
         <SettingsWrapper className="flex items-center">
           <SettingWrapper
