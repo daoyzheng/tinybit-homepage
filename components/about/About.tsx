@@ -34,14 +34,8 @@ const About = () => {
       <AboutContentWrapper className="mt-5" isAnimating={isAnimating} animationDelay={0.5}>
         Hello! My name is Dao, and I love to learn and build things for the web. I often spend my
         time building little projects that I find interesting and always trying to improve my skillsets. Currently, my role is a full-stack developer
-        on a start-up company building a web platform using <TextHighlight>Vue.js</TextHighlight>,
-        <TextHighlight> TypeScript</TextHighlight>,<TextHighlight> .NET</TextHighlight> and
-        <TextHighlight> Microsoft Azure</TextHighlight>.
-        I&apos;ve worked as a full-stack developer and a front-end developer in the past using technologies
-        such as <TextHighlight>Vue.js</TextHighlight>, <TextHighlight> React </TextHighlight>
-        and <TextHighlight>Node.js</TextHighlight>.
-        When away from the computer, I like to play <TextHighlight>basketball</TextHighlight> and
-        go <TextHighlight>hiking</TextHighlight> during the summer.
+        on a start-up company in Calgary. In the past, I&apos;ve also worked as a full-stack developer and a front-end developer.
+        When away from the computer, I like to play basketball and go hiking during the summer.
       </AboutContentWrapper>
       <div className="mt-2 space-y-3">
         <TechnologiesWrapper isAnimating={isAnimating} animationDelay={0.7}>
@@ -57,6 +51,7 @@ const About = () => {
             <div>Next.js</div>
             <div>TypeScript</div>
             <div>Styled-components</div>
+            <div>Tailwindcss</div>
           </div>
         </TechnologyCategoryItem>
         <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1}>

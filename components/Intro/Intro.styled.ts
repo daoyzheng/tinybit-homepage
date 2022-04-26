@@ -50,7 +50,7 @@ export const IntroWrapper = styled.div`
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: var(--black);
+      background-color: var(--grey);
     }
   }
   h1:first-child {
@@ -122,4 +122,13 @@ export const ImageWrapper = styled.div`
   @media (min-width: 1280px) {
     right: 20px;
   }
+`
+
+export const Watermark = styled.div`
+  position: absolute;
+  right: 0;
+  text-transform: capitalize;
+  color: #464646;
+  opacity: 0.1;
+  font-size: 180px;
 `

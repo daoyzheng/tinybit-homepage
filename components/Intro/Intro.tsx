@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { useEffect } from "react"
 import useReplaceStateEvent from "../../hooks/customReplaceStateEvent"
-import { Highlight, ImageWrapper, IntroWrapper } from "./Intro.styled"
+import { Highlight, ImageWrapper, IntroWrapper, Watermark } from "./Intro.styled"
 
 const Intro = () => {
   const triggerReplaceStateEvent = useReplaceStateEvent('')
@@ -23,14 +23,17 @@ const Intro = () => {
     if (intro) introObserver.observe(intro)
   })
   return (
-    <IntroWrapper className="w-2/3" id="intro">
-      <h1>Hello, my name is</h1>
-      <h1>Dao Zheng</h1>
-      <div>and I&apos;m a <Highlight>Software Developer</Highlight>.</div>
-      <ImageWrapper>
-        <Image src="/mouse.png" width="50px" height="50px" alt="mouse" className="absolute bottom-0"/>
-      </ImageWrapper>
-    </IntroWrapper>
+    <>
+      <Watermark>Home</Watermark>
+      <IntroWrapper className="w-2/3" id="intro">
+        <h1>Hello, my name is</h1>
+        <h1>Dao Zheng</h1>
+        <div>and I&apos;m a <Highlight>Software Developer</Highlight>.</div>
+        <ImageWrapper>
+          <Image src="/mouse.png" width="50px" height="50px" alt="mouse" className="absolute bottom-0"/>
+        </ImageWrapper>
+      </IntroWrapper>
+    </>
   )
 }
 

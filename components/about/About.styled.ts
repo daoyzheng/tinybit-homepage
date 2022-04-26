@@ -39,7 +39,7 @@ export const TechnologiesWrapper = styled.div<TechnologyProps>`
 `
 export const TechnologyCategoryItem = styled.div<TechnologyProps>`
   opacity: 0;
-  font-size: 15px;
+  font-size: 14px;
   margin-left: 16px;
   animation: ${props => props.isAnimating && css`${fadeIn} 600ms forwards ${props.animationDelay}s`};
   > :first-child {
