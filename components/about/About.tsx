@@ -1,13 +1,14 @@
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
+import { useCallback, useContext, useEffect, useState } from "react"
 import useReplaceStateEvent from "../../hooks/customReplaceStateEvent"
+import { ScrollContext } from "../context/ScrollContext"
 import { Watermark } from "../index/index.styled"
 import Subheading from "../subheading/Subheading"
 import { AboutContentWrapper, AboutWrapper, TechnologiesWrapper, TechnologyCategoryItem, TextHighlight } from "./About.styled"
 
 const About = () => {
   const triggerReplaceStateEvent = useReplaceStateEvent('#about')
-  function setAboutObserver() {
+  const setAboutObserver = useCallback(() => {
     const aboutObserverOptions = {
       threshold: 0.4
     }
@@ -24,14 +25,19 @@ const About = () => {
     }, aboutObserverOptions)
     const about = document.querySelector('#about-wrapper');
     if (about) aboutObserver.observe(about)
-  }
+  }, [triggerReplaceStateEvent])
   const [isAnimating, setIsAnimating] = useState(false)
+  const [translateRate, setTranslateRate] = useState(0)
+  const { scrollY, viewportHeight } = useContext(ScrollContext)
   useEffect(() => {
+    const height = scrollY > viewportHeight ? scrollY - viewportHeight : scrollY
+    const rate = height * 0.15
+    setTranslateRate(rate)
     setAboutObserver()
-  })
+  },[scrollY, viewportHeight, setAboutObserver])
   return (
     <>
-      {/* <Watermark>About</Watermark> */}
+      <Watermark translateRate={translateRate}>About</Watermark>
       <AboutWrapper className="w-2/3" id="about-wrapper">
         <Subheading isAnimating={isAnimating} animationDelay={0}>About</Subheading>
         <AboutContentWrapper className="mt-5" isAnimating={isAnimating} animationDelay={0.5}>

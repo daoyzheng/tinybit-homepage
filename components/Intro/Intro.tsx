@@ -7,13 +7,14 @@ import { Highlight, ImageWrapper, IntroWrapper } from "./Intro.styled"
 
 const Intro = () => {
   const triggerReplaceStateEvent = useReplaceStateEvent('')
-  const { scrollY } = useContext(ScrollContext)
+  const { scrollY, viewportHeight } = useContext(ScrollContext)
   const [translateRate, setTranslateRate] = useState(0)
   useEffect(() => {
     setIntroObserver(triggerReplaceStateEvent)
-    const rate = scrollY * 0.15
+    const height = scrollY > viewportHeight ? scrollY - viewportHeight : scrollY
+    const rate = height * 0.15
     setTranslateRate(rate)
-  }, [scrollY, triggerReplaceStateEvent])
+  }, [scrollY, viewportHeight, triggerReplaceStateEvent])
   return (
     <>
       <Watermark translateRate={translateRate}>Home</Watermark>
