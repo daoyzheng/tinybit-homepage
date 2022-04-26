@@ -1,21 +1,19 @@
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import useReplaceStateEvent from "../../hooks/customReplaceStateEvent"
+import { ScrollContext } from "../context/ScrollContext"
 import { Watermark } from "../index/index.styled"
 import { Highlight, ImageWrapper, IntroWrapper } from "./Intro.styled"
 
 const Intro = () => {
   const triggerReplaceStateEvent = useReplaceStateEvent('')
+  const { scrollY } = useContext(ScrollContext)
   const [translateRate, setTranslateRate] = useState(0)
   useEffect(() => {
     setIntroObserver(triggerReplaceStateEvent)
-    const onScroll = () => {
-      const rate = window.scrollY * 0.15
-      setTranslateRate(rate)
-    }
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  })
+    const rate = scrollY * 0.15
+    setTranslateRate(rate)
+  }, [scrollY, triggerReplaceStateEvent])
   return (
     <>
       <Watermark translateRate={translateRate}>Home</Watermark>

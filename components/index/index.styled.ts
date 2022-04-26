@@ -8,7 +8,11 @@ interface WatermarkProps {
   translateRate: number
 }
 
-export const Watermark = styled.div<WatermarkProps>`
+export const Watermark = styled.div.attrs<WatermarkProps>(props => ({
+  style: {
+    transform: `translateY(${props.translateRate}px)`
+  }
+}))<WatermarkProps>`
   position: absolute;
   right: 0;
   bottom: 30px;
@@ -16,5 +20,4 @@ export const Watermark = styled.div<WatermarkProps>`
   color: #f1b91a;
   opacity: 0.2;
   font-size: 180px;
-  transform: ${props => `translateY(${props.translateRate}px)`};
 `
