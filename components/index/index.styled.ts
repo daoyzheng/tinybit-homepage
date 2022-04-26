@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const OffColorSection = styled.section`
   background-color: var(--grey);
+  z-index: 0;
 `
 
 interface WatermarkProps {
@@ -19,5 +20,6 @@ export const Watermark = styled.div.attrs<WatermarkProps>(props => ({
   text-transform: uppercase;
   color: #f1b91a;
   opacity: 0.2;
-  font-size: 180px;
+  font-size: 140px;
+  z-index: 1;
 `

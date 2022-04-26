@@ -33,11 +33,12 @@ export const NavWrapper = styled.div`
   > :first-child {
     display: flex;
     flex-direction: column;
-    div, a {
+    div {
       padding: 0 8px;
       margin: 5px 0;
-      cursor: pointer;
       text-align: right;
+      cursor: pointer;
+      transition: background-color 300ms;
       &:hover {
         background-color: var(--red)
       }
@@ -64,10 +65,10 @@ export const NavWrapper = styled.div`
   }
 `
 
-interface AProps {
+interface NavItemWrapper {
   isSelected: boolean
 }
 
-export const A = styled.a<AProps>`
+export const NavItemWrapper = styled.div<NavItemWrapper>`
   background-color: ${props => props.isSelected ? 'var(--red)' : ''};
 `

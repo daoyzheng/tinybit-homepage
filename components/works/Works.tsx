@@ -19,7 +19,6 @@ const Works = () => {
         if (entry.isIntersecting) {
           setIsAnimating(true)
           if (window.location.hash !== '#works') {
-            console.log('herewo')
             history.pushState({}, '', '#works')
             triggerReplaceStateEvent()
           }

@@ -26,7 +26,6 @@ const About = () => {
         if (entry.isIntersecting) {
           setIsAnimating(true)
           if (window.location.hash !== '#about') {
-            console.log('hereab')
             history.pushState({}, '', '#about')
             triggerReplaceStateEvent()
           }

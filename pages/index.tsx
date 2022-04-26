@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import { useState } from 'react'
 import About from '../components/about/About'
 import { OffColorSection } from '../components/index/index.styled'
 import Intro from '../components/Intro/Intro'

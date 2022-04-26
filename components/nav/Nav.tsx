@@ -2,7 +2,7 @@ import { ok } from "assert";
 import Link from "next/link"
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
-import { NavWrapper, A } from "./Nav.styled"
+import { NavWrapper, NavItemWrapper } from "./Nav.styled"
 
 const Nav = () => {
   const [currentHash, setCurrentHash] = useState('')
@@ -26,26 +26,26 @@ const Nav = () => {
     setOkToChange(false)
     setTimeout(() => {
       setOkToChange(true)
-    }, 500)
+    }, 800)
   }
   return (
     <NavWrapper className="space-y-3">
       <div>
-        <div>
-          <Link href="#about" passHref>
-            <A isSelected={currentHash === '#about'} onClick={() => handleHashChange('#about')}>About</A>
+        <NavItemWrapper isSelected={currentHash === '#about'} onClick={() => handleHashChange('#about')}>
+          <Link href="#about">
+            <a>About</a>
           </Link>
-        </div>
-        <div>
-          <Link href="#works" passHref>
-            <A isSelected={currentHash === '#works'} onClick={() => handleHashChange('#works')}>Works</A>
+        </NavItemWrapper>
+        <NavItemWrapper isSelected={currentHash === '#works'} onClick={() => handleHashChange('#works')}>
+          <Link href="#works">
+            <a>Works</a>
           </Link>
-        </div>
-        <div>
-          <Link href="#contact" passHref>
-            <A isSelected={currentHash === '#contacts'} onClick={() => handleHashChange('#contact')}>Contact</A>
+        </NavItemWrapper>
+        <NavItemWrapper isSelected={currentHash === '#contact'} onClick={() => handleHashChange('#contact')}>
+          <Link href="#contact">
+            <a>Contact</a>
           </Link>
-        </div>
+        </NavItemWrapper>
       </div>
       <div>
         <div>Blog</div>
