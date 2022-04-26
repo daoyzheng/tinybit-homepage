@@ -28,22 +28,27 @@ const Nav = () => {
   return (
     <NavWrapper className="space-y-3">
       <div>
-        <Link href="#about" passHref>
-          <A isSelected={currentHash === '#about'} onClick={() => handleHashChange('#about')}>About</A>
-        </Link>
+        <div>
+          <Link href="#about" passHref>
+            <A isSelected={currentHash === '#about'} onClick={() => handleHashChange('#about')}>About</A>
+          </Link>
+        </div>
+        <div>
+          <Link href="#works" passHref>
+            <A isSelected={currentHash === '#works'} onClick={() => handleHashChange('#works')}>Works</A>
+          </Link>
+        </div>
+        <div>
+          <Link href="#contact" passHref>
+            <A isSelected={currentHash === '#contacts'} onClick={() => handleHashChange('#contact')}>Contact</A>
+          </Link>
+        </div>
       </div>
       <div>
-        <Link href="#works" passHref>
-          <A isSelected={currentHash === '#works'} onClick={() => handleHashChange('#works')}>Works</A>
-        </Link>
+        <div>Blog</div>
+        <div>Resume</div>
+        <div>Github</div>
       </div>
-      <div>
-        <Link href="#contact" passHref>
-          <A isSelected={currentHash === '#contacts'} onClick={() => handleHashChange('#contact')}>Contact</A>
-        </Link>
-      </div>
-      {/* <div>Blog</div>
-      <div>Resume</div> */}
     </NavWrapper>
   )
 }
