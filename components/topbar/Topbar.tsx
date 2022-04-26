@@ -1,18 +1,15 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { ScrollContext } from "../context/ScrollContext"
 import Logo from "../logo/Logo"
 import { SettingsWrapper, SettingWrapper, TopbarWrapper } from "./Topbar.styled"
 
 const Topbar = () => {
   const [isMinimize, setIsMinimize] = useState(false)
   const [locale, setLocale] = useState('en')
+  const { scrollY } = useContext(ScrollContext)
   useEffect(() => {
-    setIsMinimize(window.scrollY > 160)
-    const onScroll = () => {
-      setIsMinimize(window.scrollY > 160)
-    }
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    setIsMinimize(scrollY > 160)
+  }, [scrollY])
   return (
     <TopbarWrapper isMinimize={isMinimize}>
       <Logo className="cursor-pointer" />

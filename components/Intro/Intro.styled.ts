@@ -123,12 +123,3 @@ export const ImageWrapper = styled.div`
     right: 20px;
   }
 `
-
-export const Watermark = styled.div`
-  position: absolute;
-  right: 0;
-  text-transform: capitalize;
-  color: #464646;
-  opacity: 0.1;
-  font-size: 180px;
-`

@@ -10,10 +10,10 @@ const Home: NextPage = () => {
   return (
     <div>
       <Nav/>
-      <OffColorSection className="h-screen flex justify-center items-center w-full">
+      <OffColorSection className="h-screen flex justify-center items-center w-full relative">
         <Intro/>
       </OffColorSection>
-      <section id="about" className="min-h-screen flex justify-center">
+      <section id="about" className="min-h-screen flex justify-center relative">
         <About/>
       </section>
       <OffColorSection id="works" className="min-h-screen flex justify-center">

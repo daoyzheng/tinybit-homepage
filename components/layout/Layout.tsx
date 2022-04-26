@@ -1,4 +1,6 @@
 import Head from "next/head"
+import { createContext, useEffect, useState } from "react"
+import { ScrollContextProvider } from "../context/ScrollContext"
 import Topbar from "../topbar/Topbar"
 import { Main } from "./Layout.styled"
 
@@ -11,10 +13,12 @@ const Layout: React.FC = ({ children }) => {
         <meta name="description" content="Dao Zheng homepage" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Topbar />
-      <Main>
-        {children}
-      </Main>
+      <ScrollContextProvider>
+        <Topbar />
+        <Main>
+          {children}
+        </Main>
+      </ScrollContextProvider>
     </>
   )
 }

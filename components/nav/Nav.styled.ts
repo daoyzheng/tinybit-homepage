@@ -29,6 +29,7 @@ export const NavWrapper = styled.div`
   align-items: end;
   border-right: 1px solid var(--red);
   animation: ${fadeIn} 1s forwards;
+  z-index: 1;
   > :first-child {
     display: flex;
     flex-direction: column;
