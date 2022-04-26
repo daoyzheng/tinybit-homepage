@@ -11,8 +11,7 @@ const Intro = () => {
   const [translateRate, setTranslateRate] = useState(0)
   useEffect(() => {
     setIntroObserver(triggerReplaceStateEvent)
-    const height = scrollY > viewportHeight ? scrollY - viewportHeight : scrollY
-    const rate = height * 0.15
+    const rate = scrollY * 0.15
     setTranslateRate(rate)
   }, [scrollY, viewportHeight, triggerReplaceStateEvent])
   return (

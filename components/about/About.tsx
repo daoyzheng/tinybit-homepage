@@ -7,16 +7,26 @@ import Subheading from "../subheading/Subheading"
 import { AboutContentWrapper, AboutWrapper, TechnologiesWrapper, TechnologyCategoryItem, TextHighlight } from "./About.styled"
 
 const About = () => {
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [translateRate, setTranslateRate] = useState(0)
+  const { scrollY, viewportHeight } = useContext(ScrollContext)
   const triggerReplaceStateEvent = useReplaceStateEvent('#about')
+
+  const handleRateChange = useCallback(() => {
+    const rate = (scrollY - viewportHeight) * 0.15
+    setTranslateRate(rate)
+  }, [scrollY, viewportHeight])
+
   const setAboutObserver = useCallback(() => {
     const aboutObserverOptions = {
-      threshold: 0.4
+      threshold: 0.5
     }
     const aboutObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setIsAnimating(true)
           if (window.location.hash !== '#about') {
+            console.log('hereab')
             history.pushState({}, '', '#about')
             triggerReplaceStateEvent()
           }
@@ -26,15 +36,10 @@ const About = () => {
     const about = document.querySelector('#about-wrapper');
     if (about) aboutObserver.observe(about)
   }, [triggerReplaceStateEvent])
-  const [isAnimating, setIsAnimating] = useState(false)
-  const [translateRate, setTranslateRate] = useState(0)
-  const { scrollY, viewportHeight } = useContext(ScrollContext)
   useEffect(() => {
-    const height = scrollY > viewportHeight ? scrollY - viewportHeight : scrollY
-    const rate = height * 0.15
-    setTranslateRate(rate)
     setAboutObserver()
-  },[scrollY, viewportHeight, setAboutObserver])
+    handleRateChange()
+  },[handleRateChange, setAboutObserver])
   return (
     <>
       <Watermark translateRate={translateRate}>About</Watermark>
