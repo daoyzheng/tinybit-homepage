@@ -42,6 +42,9 @@ export const NavWrapper = styled.div`
       &:hover {
         background-color: var(--red)
       }
+      @media (min-width: 2500px) {
+        font-size: 40px;
+      }
     }
   }
   > :nth-child(2) {

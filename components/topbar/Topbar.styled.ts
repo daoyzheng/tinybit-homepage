@@ -14,7 +14,7 @@ export const TopbarWrapper = styled.div<TopbarWrapperProps>`
   right: 0;
   left: 0;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   box-shadow: ${props => props.isMinimize ? '0 2px 4px -1px' : ''};
   padding: ${props => props.isMinimize ? '16px 20px' : '20px 20px'};
   transition: padding 500ms;

@@ -41,6 +41,9 @@ const Works = () => {
       <Watermark translateRate={translateRate}>Works</Watermark>
       <WorksWrapper className="w-2/3" id="works-wrapper">
         <Subheading isAnimating={isAnimating} animationDelay={0}>Works</Subheading>
+        <div>
+
+        </div>
       </WorksWrapper>
     </>
   )
