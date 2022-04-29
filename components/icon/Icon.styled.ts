@@ -12,9 +12,11 @@ const fadeIn = keyframes`
 `
 
 export const IconWrapper = styled.div<IconWrapperProps>`
-  position: relative;
   width: fit-content;
+  position: relative;
+  transition: transform 200ms;
   :hover {
+    transform: scale(1.1);
     ::before {
       opacity: 0;
       animation: ${fadeIn} 500ms forwards;
@@ -29,7 +31,7 @@ export const IconWrapper = styled.div<IconWrapperProps>`
       width: fit-content;
       white-space: nowrap;
       color: lightgray;
-      background-color: var(--black);
+      background-color: #525252;
     }
   }
 `

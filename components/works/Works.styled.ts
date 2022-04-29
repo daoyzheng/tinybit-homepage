@@ -4,15 +4,22 @@ export const WorksWrapper = styled.div`
   margin-top: 150px;
 `
 
-export const WorksImageWrapper = styled.div`
+export const WorksImageWrapper = styled.a`
   width: 100%;
   position: relative;
   box-shadow: 5px 5px 5px var(--grey), 10px 10px var(--red);
   color: #9f9f9f;
   cursor: pointer;
+  overflow: hidden;
+  * {
+    transition: transform 300ms;
+  }
   &:hover {
     ::after {
       opacity: 0;
+    }
+    * {
+      transform: scale(1.02);
     }
   }
   ::after {

@@ -16,6 +16,7 @@ const shiftRight = keyframes`
   100% {
     opacity: 1;
     transform: translateX(0);
+    transform: none;
   }
 `
 

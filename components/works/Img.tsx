@@ -3,12 +3,13 @@ import { WorksImageWrapper } from "./Works.styled"
 
 interface Props {
   src: string
+  url?: string
 }
 
-const Img = ({ src }: Props) => {
+const Img = ({ src, url }: Props) => {
   return (
-    <WorksImageWrapper>
-      <Image src={src} width={500} height={300} alt="works_blog" layout="responsive"/>
+    <WorksImageWrapper href={url} target="_blank" rel="noreferrer">
+      <Image src={src} width={500} height={300} alt="works_blog" layout="responsive" priority/>
     </WorksImageWrapper>
   )
 }
