@@ -1,7 +1,7 @@
-import Image from "next/image"
 import { useCallback, useContext, useEffect, useState } from "react"
 import useReplaceStateEvent from "../../hooks/customReplaceStateEvent"
 import { ScrollContext } from "../context/ScrollContext"
+import Icon from "../icon/Icon"
 import { Watermark } from "../index/index.styled"
 import Subheading from "../subheading/Subheading"
 import Img from "./Img"
@@ -57,10 +57,10 @@ const Works = () => {
               <div>Strapi</div>
             </div>
             <div className="mt-5">
-              A personal blog utilizing Strapi, a headless CMS, along with Next.js for static site generation.
+              A minimalist personal blog utilizing Strapi, a headless CMS, along with Next.js for static site generation.
             </div>
             <div className="mt-5">
-              github
+              <Icon url="https://github.com/daoyzheng/tinybit-blog-frontend" src="/github_icon.png" tooltip="Project Repo"/>
             </div>
           </WorksDescriptionWrapper>
         </WorkWrapper>

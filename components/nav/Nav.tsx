@@ -2,6 +2,7 @@ import { ok } from "assert";
 import Link from "next/link"
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
+import Icon from "../icon/Icon";
 import { NavWrapper, NavItemWrapper } from "./Nav.styled"
 
 const Nav = () => {
@@ -48,9 +49,9 @@ const Nav = () => {
         </NavItemWrapper>
       </div>
       <div>
-        <div>Blog</div>
-        <div>Resume</div>
-        <div>Github</div>
+        <Icon url="https://blog.tinybit.me" src="/blogging.png" tooltip="Blog" isHorizontal/>
+        <Icon url="" src="/cv.png" tooltip="Resume" isHorizontal/>
+        <Icon url="https://github.com/daoyzheng" src="/github.png" tooltip="Github" isHorizontal/>
       </div>
     </NavWrapper>
   )

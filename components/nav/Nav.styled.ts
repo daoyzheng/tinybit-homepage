@@ -50,6 +50,7 @@ export const NavWrapper = styled.div`
   > :nth-child(2) {
     width: fit-content;
     padding-bottom: 30px;
+    margin-right: 10px;
     > :first-child {
       margin: 15px 0px;
       opacity: 0;
