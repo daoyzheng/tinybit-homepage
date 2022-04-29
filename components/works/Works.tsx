@@ -10,7 +10,7 @@ import { WorksDescriptionWrapper, WorksWrapper, WorkWrapper } from "./Works.styl
 const Works = () => {
   const [isAnimating, setIsAnimating] = useState(false)
   const [translateRate, setTranslateRate] = useState(0)
-  const { scrollY, viewportHeight } = useContext(ScrollContext)
+  const { scrollY, viewportHeight, viewportWidth } = useContext(ScrollContext)
   const triggerReplaceStateEvent = useReplaceStateEvent('#works')
   const setWorksObserver = useCallback(() => {
     const worksObserverOptions = {
@@ -31,9 +31,9 @@ const Works = () => {
     if (works) worksObserver.observe(works)
   },[triggerReplaceStateEvent])
   const handleRateChange = useCallback(() => {
-    const rate = (scrollY - 2 * viewportHeight) * 0.15
+    const rate = (scrollY - 2 * viewportHeight) * (viewportWidth > 1024 ? 0.15 : 0)
     setTranslateRate(rate)
-  }, [scrollY, viewportHeight])
+  }, [scrollY, viewportHeight, viewportWidth])
 
   useEffect(() => {
     setWorksObserver()

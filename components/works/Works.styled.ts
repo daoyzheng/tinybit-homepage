@@ -31,7 +31,7 @@ export const WorksImageWrapper = styled.a`
     transition: opacity 500ms;
   }
   @media (min-width: 768px) {
-    width: 550px;
+    width: 600px;
   }
 `
 

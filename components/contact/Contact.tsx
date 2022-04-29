@@ -8,13 +8,13 @@ import { ContactContentWrapper, ContactWrapper } from "./Contact.styled"
 const Contact = () => {
   const [isAnimating, setIsAnimating] = useState(false)
   const [translateRate, setTranslateRate] = useState(0)
-  const { scrollY, viewportHeight } = useContext(ScrollContext)
+  const { scrollY, viewportHeight, viewportWidth } = useContext(ScrollContext)
   const triggerReplaceStateEvent = useReplaceStateEvent('#contact')
 
   const handleRateChange = useCallback(() => {
-    const rate = (scrollY - 3 * viewportHeight) * 0.15
+    const rate = (scrollY - 3 * viewportHeight) * (viewportWidth > 1024 ? 0.15 : 0)
     setTranslateRate(rate)
-  }, [scrollY, viewportHeight])
+  }, [scrollY, viewportHeight, viewportWidth])
 
   const setAboutObserver = useCallback(() => {
     const aboutObserverOptions = {
@@ -41,9 +41,9 @@ const Contact = () => {
   return (
     <>
       <Watermark translateRate={translateRate}>Contact</Watermark>
-      <ContactWrapper className="w-2/3" id="contact-wrapper">
+      <ContactWrapper className="w-2/3 mb-16" id="contact-wrapper">
         <Subheading isAnimating={isAnimating} animationDelay={0}>Contact</Subheading>
-        <ContactContentWrapper className="flex flex-col justify-center items-center mt-20">
+        <ContactContentWrapper className="flex flex-col justify-center items-center mt-14 md:mt-20" isAnimating={isAnimating} animationDelay={0.5}>
           <div>Want to connect?</div>
           <div className="mt-7">Feel free to shoot me an email if you have any questions, or just want to say hello, or is interested in coding, playing basketball, or hiking together.</div>
           <div className="mt-20">Connect</div>

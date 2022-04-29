@@ -32,7 +32,7 @@ const blink = keyframes`
 export const IntroWrapper = styled.div`
   position: relative;
   font-family: 'Source Code Pro', monospace;
-  font-size: 3.5vw;
+  font-size: 5vw;
   h1 {
     position: relative;
     width: fit-content;
@@ -83,6 +83,7 @@ export const IntroWrapper = styled.div`
     animation: ${fadeIn} 0.8s ease 4.2s forwards;
   }
   @media (min-width: 768px) {
+    font-size: 3.5rem;
     h1 div{
       font-size: 32px;
     }

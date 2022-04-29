@@ -1,10 +1,27 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 export const ContactWrapper = styled.div`
   margin-top: 150px;
 `
 
-export const ContactContentWrapper = styled.div`
+interface ContactContentWrapperProps {
+  isAnimating: boolean
+  animationDelay: number
+}
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
+
+export const ContactContentWrapper = styled.div<ContactContentWrapperProps>`
+  opacity: 0;
+  animation: ${props => props.isAnimating && css`${fadeIn} 600ms forwards ${props.animationDelay}s`};
   > :first-child {
     color: var(--lightred);
     font-size: 30px;
@@ -13,10 +30,10 @@ export const ContactContentWrapper = styled.div`
     }
   }
   > :nth-child(2) {
-    font-size: 16px;
     max-width: 600px;
     line-height: 30px;
     text-align: center;
+    font-size: 16px;
     @media (min-width: 1280px) {
       font-size: 1vw;
     }

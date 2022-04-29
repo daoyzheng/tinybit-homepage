@@ -21,10 +21,13 @@ const shiftRight = keyframes`
 `
 
 export const NavWrapper = styled.div`
+  display: none;
+  @media (min-width: 1280px) {
+    display: flex;
+  }
   position: fixed;
   top: 20%;
   left: 10%;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: end;

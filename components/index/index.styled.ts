@@ -20,6 +20,9 @@ export const Watermark = styled.div.attrs<WatermarkProps>(props => ({
   text-transform: uppercase;
   color: #9f9f9f;
   opacity: 0.2;
-  font-size: 140px;
+  font-size: 80px;
   z-index: 1;
+  @media (min-width: 1280px) {
+    font-size: 140px;
+  }
 `

@@ -9,13 +9,14 @@ import { AboutContentWrapper, AboutWrapper, TechnologiesWrapper, TechnologyCateg
 const About = () => {
   const [isAnimating, setIsAnimating] = useState(false)
   const [translateRate, setTranslateRate] = useState(0)
-  const { scrollY, viewportHeight } = useContext(ScrollContext)
+  const { scrollY, viewportHeight, viewportWidth } = useContext(ScrollContext)
   const triggerReplaceStateEvent = useReplaceStateEvent('#about')
 
   const handleRateChange = useCallback(() => {
-    const rate = (scrollY - viewportHeight) * 0.15
+    const rate = (scrollY - viewportHeight) * (viewportWidth > 1024 ? 0.15 : 0)
+    console.log('lkj', viewportWidth)
     setTranslateRate(rate)
-  }, [scrollY, viewportHeight])
+  }, [scrollY, viewportHeight, viewportWidth])
 
   const setAboutObserver = useCallback(() => {
     const aboutObserverOptions = {
@@ -42,7 +43,7 @@ const About = () => {
   return (
     <>
       <Watermark translateRate={translateRate}>About</Watermark>
-      <AboutWrapper className="w-2/3" id="about-wrapper">
+      <AboutWrapper className="w-2/3 mb-16" id="about-wrapper">
         <Subheading isAnimating={isAnimating} animationDelay={0}>About</Subheading>
         <AboutContentWrapper className="mt-5" isAnimating={isAnimating} animationDelay={0.5}>
           Hello! My name is Dao, and I love to learn and build software applications. I often spend my
