@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import About from '../components/about/About'
+import Contact from '../components/contact/Contact'
 import { OffColorSection } from '../components/index/index.styled'
 import Intro from '../components/Intro/Intro'
 import Nav from '../components/nav/Nav'
@@ -18,8 +19,8 @@ const Home: NextPage = () => {
       <OffColorSection id="works" className="min-h-screen flex justify-center relative">
         <Works/>
       </OffColorSection>
-      <section id="contact" className="min-h-screen flex justify-center">
-        hello
+      <section id="contact" className="min-h-screen flex justify-center relative">
+        <Contact/>
       </section>
     </div>
   )

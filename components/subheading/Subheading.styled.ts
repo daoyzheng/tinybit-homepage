@@ -35,4 +35,8 @@ export const SubheadingWrapper = styled.div<SubheadingWrapperProps>`
   @media (min-width: 768px) {
     padding: 0 15px;
   }
+  font-size: 16px;
+  @media (min-width: 1280px) {
+    font-size: 1vw;
+  }
 `

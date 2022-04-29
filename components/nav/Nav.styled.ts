@@ -43,29 +43,37 @@ export const NavWrapper = styled.div`
       &:hover {
         background-color: var(--red);
       }
-      @media (min-width: 2500px) {
-        font-size: 40px;
+      font-size: 16px;
+      @media (min-width: 1280px) {
+        font-size: 1vw;
       }
     }
   }
   > :nth-child(2) {
+    height: fit-content;
     width: fit-content;
+    bottom: 60px;
     padding-bottom: 30px;
     margin-right: 10px;
     > :first-child {
-      margin: 15px 0px;
+      margin: 10px 0px;
       opacity: 0;
       animation: ${shiftRight} 400ms forwards 1.1s;
     }
     > :nth-child(2) {
-      margin: 15px 0px;
+      margin: 10px 0px;
       opacity: 0;
       animation: ${shiftRight} 400ms forwards 1.2s;
     }
     > :nth-child(3) {
-      margin: 15px 0px;
+      margin: 10px 0px;
       opacity: 0;
       animation: ${shiftRight} 400ms forwards 1.3s;
+    }
+    > :nth-child(4) {
+      margin-top: 10px;
+      opacity: 0;
+      animation: ${shiftRight} 400ms forwards 1.4s;
     }
   }
 `

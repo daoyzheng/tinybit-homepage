@@ -18,6 +18,10 @@ export const TopbarWrapper = styled.div<TopbarWrapperProps>`
   box-shadow: ${props => props.isMinimize ? '0 2px 4px -1px' : ''};
   padding: ${props => props.isMinimize ? '16px 20px' : '20px 20px'};
   transition: padding 500ms;
+  font-size: 16px;
+  @media (min-width: 1280px) {
+    font-size: 1vw;
+  }
 `
 
 interface SettingWrapperProps {
@@ -29,7 +33,6 @@ interface SettingWrapperProps {
 
 export const SettingWrapper = styled.span<SettingWrapperProps>`
   cursor: pointer;
-  font-size: 12px;
   font-weight: 500;
   color: ${props => props.isActive ? 'var(--red)' : 'white'};
   &::after {
@@ -47,12 +50,22 @@ export const SettingWrapper = styled.span<SettingWrapperProps>`
 `
 
 export const SettingsWrapper = styled.div`
+  font-size: 16px;
+  @media (min-width: 1280px) {
+    font-size: 1vw;
+  }
   span:first-child {
     ::after {
       margin-right: 5px;
     }
     ::before {
       margin-right: -40px;
+    }
+  }
+  span:nth-child(2) {
+    font-size: 16px;
+    @media (min-width: 1280px) {
+      font-size: 1vw;
     }
   }
   span:last-child {

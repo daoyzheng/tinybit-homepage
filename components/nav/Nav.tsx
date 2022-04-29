@@ -48,9 +48,10 @@ const Nav = () => {
         </NavItemWrapper>
       </div>
       <div>
-        <Icon url="https://blog.tinybit.me" src="/blogging.png" tooltip="Blog" isHorizontal/>
-        <Icon url="" src="/cv.png" tooltip="Resume" isHorizontal/>
-        <Icon url="https://github.com/daoyzheng" src="/github.png" tooltip="Github" isHorizontal/>
+        <Icon url="https://github.com/daoyzheng" src="/github.png" tooltip="Github" isHorizontal dense/>
+        <Icon url="https://ca.linkedin.com/in/daozheng" src="/linkedin.png" tooltip="Linkedin" isHorizontal dense/>
+        <Icon url="https://blog.tinybit.me" src="/blogging.png" tooltip="Blog" isHorizontal dense/>
+        <Icon url="" src="/cv.png" tooltip="Resume" isHorizontal dense/>
       </div>
     </NavWrapper>
   )

@@ -6,12 +6,13 @@ interface Props {
   tooltip: string
   src: string
   isHorizontal?: boolean
+  dense?: boolean
 }
-const Icon = ({ src, url, tooltip, isHorizontal }: Props) => {
+const Icon = ({ src, url, tooltip, isHorizontal, dense }: Props) => {
   return (
     <IconWrapper content={tooltip} isHorizontal={isHorizontal}>
       <a href={url} target="_blank" rel="noreferrer">
-        <Image src={src} width="30" height="30" alt={tooltip}/>
+        <Image src={src} width={dense ? '24' : '28'} height={dense ? '24' : '28'} alt={tooltip}/>
       </a>
     </IconWrapper>
   )

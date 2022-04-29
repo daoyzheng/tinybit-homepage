@@ -20,9 +20,12 @@ interface AboutContentWrapperProps {
 }
 export const AboutContentWrapper = styled.div<AboutContentWrapperProps>`
   opacity: 0;
-  font-size: 16px;
   line-height: 30px;
   animation: ${props => props.isAnimating && css`${fadeIn} 600ms forwards ${props.animationDelay}s`};
+  font-size: 16px;
+  @media (min-width: 1280px) {
+    font-size: 1vw;
+  }
 `
 
 export const TextHighlight = styled.span`
@@ -36,8 +39,16 @@ interface TechnologyProps {
 export const TechnologiesWrapper = styled.div<TechnologyProps>`
   opacity: 0;
   animation: ${props => props.isAnimating && css`${fadeIn} 600ms forwards ${props.animationDelay}s`};
+  font-size: 16px;
+  @media (min-width: 1280px) {
+    font-size: 1vw;
+  }
 `
 export const TechnologyCategoryItem = styled.div<TechnologyProps>`
+  font-size: 16px;
+  @media (min-width: 1280px) {
+    font-size: 1vw;
+  }
   opacity: 0;
   font-size: 14px;
   margin-left: 16px;
