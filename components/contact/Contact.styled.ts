@@ -43,8 +43,6 @@ export const ContactContentWrapper = styled.div<ContactContentWrapperProps>`
     padding: 10px 20px;
     border: 1px solid var(--red);
     border-radius: 5px;
-    cursor: pointer;
-    color: white;
     &:hover {
       background-color: var(--lightred);
     }
