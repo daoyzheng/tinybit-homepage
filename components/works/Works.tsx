@@ -57,7 +57,10 @@ const Works = () => {
               <div>Strapi</div>
             </div>
             <div className="mt-5">
-              A personal blog utilizing a headless CMS, Strapi, along with Next.js for static site generation.
+              A personal blog utilizing Strapi, a headless CMS, along with Next.js for static site generation.
+            </div>
+            <div className="mt-5">
+              github
             </div>
           </WorksDescriptionWrapper>
         </WorkWrapper>

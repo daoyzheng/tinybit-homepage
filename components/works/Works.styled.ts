@@ -8,6 +8,7 @@ export const WorksImageWrapper = styled.div`
   width: 100%;
   position: relative;
   box-shadow: 5px 5px 5px var(--grey), 10px 10px var(--red);
+  color: #9f9f9f;
   cursor: pointer;
   &:hover {
     ::after {
@@ -56,6 +57,10 @@ export const WorksDescriptionWrapper = styled.div`
     @media (min-width: 768px) {
       font-size: 1.8vw;
     }
+    position: relative;
+    cursor: pointer;
+    border-bottom: 2px solid var(--red);
+    margin-bottom: 15px;
   }
   > :nth-child(2) {
     display: flex;
@@ -65,7 +70,7 @@ export const WorksDescriptionWrapper = styled.div`
     margin-top: 8px;
     div {
       font-size: 14px;
-      color: white;
+      color: var(--lightred);
       display: flex;
       line-height: 1px;
       white-space: nowrap;
