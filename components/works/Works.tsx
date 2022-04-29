@@ -5,7 +5,7 @@ import { ScrollContext } from "../context/ScrollContext"
 import { Watermark } from "../index/index.styled"
 import Subheading from "../subheading/Subheading"
 import Img from "./Img"
-import { Sparkle, WorksDescriptionWrapper, WorksWrapper } from "./Works.styled"
+import { WorksDescriptionWrapper, WorksWrapper, WorkWrapper } from "./Works.styled"
 
 const Works = () => {
   const [isAnimating, setIsAnimating] = useState(false)
@@ -42,13 +42,13 @@ const Works = () => {
   return (
     <>
       <Watermark translateRate={translateRate}>Works</Watermark>
-      <WorksWrapper className="w-2/3" id="works-wrapper">
+      <WorksWrapper className="w-2/3 mb-16" id="works-wrapper">
         <Subheading isAnimating={isAnimating} animationDelay={0}>Works</Subheading>
-        <div className="mt-12 flex gap-6">
+        <WorkWrapper className="mt-12 flex gap-6 md:flex-nowrap flex-wrap" isAnimating={isAnimating} animationDelay={0.5}>
           <Img src="/blog_light.png" />
           <WorksDescriptionWrapper>
             <div>Personal Blog</div>
-            <div>
+            <div className="gap-4">
               <div>Next.js</div>
               <div>React</div>
               <div>Styled Components</div>
@@ -56,11 +56,11 @@ const Works = () => {
               <div>TypeScript</div>
               <div>Strapi</div>
             </div>
-            <div>
+            <div className="mt-5">
               A personal blog utilizing a headless CMS, Strapi, along with Next.js for static site generation.
             </div>
           </WorksDescriptionWrapper>
-        </div>
+        </WorkWrapper>
       </WorksWrapper>
     </>
   )
