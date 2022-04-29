@@ -46,7 +46,7 @@ const Contact = () => {
         <ContactContentWrapper className="flex flex-col justify-center items-center mt-14 md:mt-20" isAnimating={isAnimating} animationDelay={0.5}>
           <div>Want to connect?</div>
           <div className="mt-7">Feel free to shoot me an email if you have any questions, or just want to say hello, or is interested in coding, playing basketball, or hiking together.</div>
-          <div className="mt-20">Connect</div>
+          <button className="mt-20">Connect</button>
         </ContactContentWrapper>
       </ContactWrapper>
     </>

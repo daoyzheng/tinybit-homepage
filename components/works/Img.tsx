@@ -9,7 +9,7 @@ interface Props {
 const Img = ({ src, url }: Props) => {
   return (
     <WorksImageWrapper href={url} target="_blank" rel="noreferrer">
-      <Image src={src} width={500} height={300} alt="works_blog" layout="responsive" priority/>
+      <Image src={src} width={500} height={300} alt="works" layout="responsive" />
     </WorksImageWrapper>
   )
 }

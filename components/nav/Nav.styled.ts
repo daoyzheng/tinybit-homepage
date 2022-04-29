@@ -21,16 +21,16 @@ const shiftRight = keyframes`
 `
 
 export const NavWrapper = styled.div`
-  display: none;
+  display: flex;
   @media (min-width: 1280px) {
-    display: flex;
+    left: 10%;
   }
   position: fixed;
+  align-items: end;
   top: 20%;
-  left: 10%;
+  left: 0%;
   flex-direction: column;
   justify-content: space-between;
-  align-items: end;
   border-right: 1px solid var(--red);
   animation: ${fadeIn} 1s forwards;
   z-index: 1;
@@ -38,17 +38,20 @@ export const NavWrapper = styled.div`
     display: flex;
     flex-direction: column;
     div {
-      padding: 0 8px;
-      margin: 5px 0;
-      text-align: right;
-      cursor: pointer;
-      transition: background-color 500ms;
-      &:hover {
-        background-color: var(--red);
-      }
-      font-size: 16px;
+      text-align: center;
+      margin: 8px 0;
+      font-size: 14px;
       @media (min-width: 1280px) {
+        font-size: 16px;
         font-size: 1vw;
+        padding: 0 8px;
+        margin: 5px 0;
+        text-align: right;
+        cursor: pointer;
+        transition: background-color 500ms;
+        &:hover {
+          background-color: var(--red);
+        }
       }
     }
   }

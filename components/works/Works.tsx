@@ -44,7 +44,7 @@ const Works = () => {
       <Watermark translateRate={translateRate}>Works</Watermark>
       <WorksWrapper className="w-2/3 mb-16" id="works-wrapper">
         <Subheading isAnimating={isAnimating} animationDelay={0}>Works</Subheading>
-        <WorkWrapper className="mt-12 flex gap-6 md:flex-nowrap flex-wrap" isAnimating={isAnimating} animationDelay={0.5}>
+        <WorkWrapper className="mt-12 flex gap-6 lg:flex-nowrap flex-wrap" isAnimating={isAnimating} animationDelay={0.5}>
           <Img src="/blog_light.png" url="https://blog.tinybit.me"/>
           <WorksDescriptionWrapper>
             <a href="https://blog.tinybit.me" target="_blank" rel="noreferrer">Personal Blog</a>

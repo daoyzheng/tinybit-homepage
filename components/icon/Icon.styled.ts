@@ -15,10 +15,6 @@ export const IconWrapper = styled.div<IconWrapperProps>`
   width: fit-content;
   position: relative;
   transition: transform 200ms;
-  font-size: 16px;
-  @media (min-width: 1280px) {
-    font-size: 1vw;
-  }
   :hover {
     transform: scale(1.1);
     ::before {

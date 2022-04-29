@@ -22,8 +22,8 @@ const Home: NextPage = () => {
       <section id="contact" className="min-h-screen flex justify-center relative">
         <Contact/>
       </section>
-      <OffColorSection className="min-h-screen flex justify-center">
-        hello
+      <OffColorSection className="h-72 flex justify-center">
+        footer
       </OffColorSection>
     </div>
   )

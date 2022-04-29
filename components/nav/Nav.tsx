@@ -1,12 +1,15 @@
 import Link from "next/link"
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
+import { ScrollContext } from "../context/ScrollContext";
 import Icon from "../icon/Icon";
 import { NavWrapper, NavItemWrapper } from "./Nav.styled"
 
 const Nav = () => {
   const [currentHash, setCurrentHash] = useState('')
   const [okToChange, setOkToChange] = useState(true)
+  const [useIcon, setUseIcon] = useState(false)
+  const { viewportWidth } = useContext(ScrollContext)
   const router = useRouter()
   const onReplaceState = useCallback((e: CustomEventInit<string>) => {
     if (okToChange) {
@@ -14,13 +17,19 @@ const Nav = () => {
       setCurrentHash(hash || '')
     }
   },[okToChange])
+  const handleViewportChange = useCallback(() => {
+    if (viewportWidth < 1280) {
+      setUseIcon(true)
+    }
+  }, [viewportWidth])
   useEffect(() => {
+    handleViewportChange()
     if (router.asPath && router.asPath.length > 1) {
       setCurrentHash(router.asPath.split('/')[1])
     }
     document.addEventListener('onreplacestate', onReplaceState)
     return () => document.removeEventListener('onreplacestate', onReplaceState)
-  }, [router, onReplaceState])
+  }, [router, onReplaceState, handleViewportChange])
   const handleHashChange = (hash: string) => {
     setCurrentHash(hash)
     setOkToChange(false)
@@ -32,7 +41,7 @@ const Nav = () => {
     <NavWrapper className="space-y-3">
       <div>
         <NavItemWrapper isSelected={currentHash === '#about'} onClick={() => handleHashChange('#about')}>
-          <Link href="#about">
+          <Link href="#about" passHref>
             <a>About</a>
           </Link>
         </NavItemWrapper>

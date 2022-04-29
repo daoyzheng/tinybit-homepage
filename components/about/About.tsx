@@ -14,7 +14,6 @@ const About = () => {
 
   const handleRateChange = useCallback(() => {
     const rate = (scrollY - viewportHeight) * (viewportWidth > 1024 ? 0.15 : 0)
-    console.log('lkj', viewportWidth)
     setTranslateRate(rate)
   }, [scrollY, viewportHeight, viewportWidth])
 
