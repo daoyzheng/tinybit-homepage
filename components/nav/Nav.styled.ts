@@ -38,9 +38,9 @@ export const NavWrapper = styled.div`
       margin: 5px 0;
       text-align: right;
       cursor: pointer;
-      transition: background-color 300ms;
+      transition: background-color 500ms;
       &:hover {
-        background-color: var(--red)
+        background-color: var(--red);
       }
       @media (min-width: 2500px) {
         font-size: 40px;

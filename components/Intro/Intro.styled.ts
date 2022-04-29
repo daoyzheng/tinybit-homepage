@@ -55,12 +55,12 @@ export const IntroWrapper = styled.div`
   }
   h1:first-child {
     ::before {
-      animation: ${typewritter} 2s steps(17) .7s forwards;
+      animation: ${typewritter} 1.5s steps(17) .7s forwards;
     }
     ::after {
       animation:
-        ${cursor} 2s steps(17) .7s,
-        ${blink} 1s steps(17) infinite;
+        ${cursor} 1.5s steps(17) .7s,
+        ${blink} 0.7s steps(17) infinite;
     }
   }
   h1:nth-child(2) {
@@ -68,19 +68,19 @@ export const IntroWrapper = styled.div`
     font-weight: bold;
     color: var(--red);
     ::before {
-      animation: ${typewritter} 1.5s steps(9) 3s forwards;
+      animation: ${typewritter} 1.2s steps(9) 2.5s forwards;
     }
     ::after {
       height: 0;
       animation:
-        ${cursor} 1.5s steps(9) 3s,
+        ${cursor} 1.2s steps(9) 2.5s,
         ${blink} 1s steps(9) infinite;
     }
   }
   & > :nth-child(3) {
     transform: translateY(10px);
     opacity: 0;
-    animation: ${fadeIn} 0.8s ease 4.8s forwards;
+    animation: ${fadeIn} 0.8s ease 4.2s forwards;
   }
   @media (min-width: 768px) {
     h1 div{
@@ -115,7 +115,7 @@ const scale = keyframes`
 
 export const ImageWrapper = styled.div`
   opacity: 0;
-  animation: ${fadeIn} 0.8s ease 5.3s forwards, ${scale} .5s ease 5.8s forwards;
+  animation: ${fadeIn} 0.8s ease 5.0s forwards, ${scale} .5s ease 5.2s forwards;
   position: absolute;
   bottom: 0;
   right: -20px;

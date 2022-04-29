@@ -60,7 +60,7 @@ const About = () => {
               <div>React</div>
               <div>Next.js</div>
               <div>TypeScript</div>
-              <div>Styled-components</div>
+              <div>Styled Components</div>
               <div>TailwindCSS</div>
             </div>
           </TechnologyCategoryItem>
