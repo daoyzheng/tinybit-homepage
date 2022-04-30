@@ -27,7 +27,7 @@ export const NavWrapper = styled.div`
   }
   position: fixed;
   align-items: end;
-  top: 20%;
+  top: 160px;
   left: 0%;
   flex-direction: column;
   justify-content: space-between;
@@ -61,6 +61,7 @@ export const NavWrapper = styled.div`
     bottom: 60px;
     padding-bottom: 30px;
     margin-right: 10px;
+    /* align-items: end; */
     > :first-child {
       margin: 10px 0px;
       opacity: 0;
