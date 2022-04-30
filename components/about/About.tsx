@@ -1,12 +1,16 @@
 import { useRouter } from "next/router"
 import { useCallback, useContext, useEffect, useState } from "react"
 import useReplaceStateEvent from "../../hooks/customReplaceStateEvent"
+import { LocaleContext } from "../context/LocaleContext"
 import { ScrollContext } from "../context/ScrollContext"
+import i18n from "../i18n"
 import { Watermark } from "../index/index.styled"
 import Subheading from "../subheading/Subheading"
 import { AboutContentWrapper, AboutWrapper, TechnologiesWrapper, TechnologyCategoryItem, TextHighlight } from "./About.styled"
 
 const About = () => {
+  const locale = useContext(LocaleContext)
+  const translation = locale === 'en' ? i18n.en : i18n.zh
   const [isAnimating, setIsAnimating] = useState(false)
   const [translateRate, setTranslateRate] = useState(0)
   const { scrollY, viewportHeight, viewportWidth } = useContext(ScrollContext)
@@ -41,20 +45,16 @@ const About = () => {
   },[handleRateChange, setAboutObserver])
   return (
     <>
-      <Watermark translateRate={translateRate}>About</Watermark>
+      <Watermark translateRate={translateRate}>{translation.nav.about}</Watermark>
       <AboutWrapper className="w-2/3 mb-16" id="about-wrapper">
-        <Subheading isAnimating={isAnimating} animationDelay={0}>About</Subheading>
-        <AboutContentWrapper className="mt-5" isAnimating={isAnimating} animationDelay={0.5}>
-          Hello! My name is Dao, and I love to learn and build software applications. I often spend my
-          time taking on small projects to improve my skillsets. Currently, I&apos;m in a role with a start-up company based in Calgary
-          with experience as a full-stack and a front-end developer. When away from the screen, I enjoy being active by playing basketball and hiking.
-        </AboutContentWrapper>
+        <Subheading isAnimating={isAnimating} animationDelay={0}>{translation.nav.about}</Subheading>
+        <AboutContentWrapper className="mt-5" isAnimating={isAnimating} animationDelay={0.5}>{translation.about.description}</AboutContentWrapper>
         <div className="mt-2 space-y-3 mb-16">
           <TechnologiesWrapper isAnimating={isAnimating} animationDelay={0.7}>
-            <TextHighlight className="text-lg">&gt;</TextHighlight> Here are some technologies that I have worked with
+            <TextHighlight className="text-lg">&gt;</TextHighlight> {translation.about.technologyDescription}
           </TechnologiesWrapper>
           <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={0.8}>
-            <div>Front-end</div>
+            <div>{translation.about.frontEnd}</div>
             <div>
               <div>Vue.js</div>
               <div>React</div>
@@ -65,7 +65,7 @@ const About = () => {
             </div>
           </TechnologyCategoryItem>
           <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1}>
-            <div>Back-end</div>
+            <div>{translation.about.backEnd}</div>
             <div>
               <div>.NET</div>
               <div>Node.js</div>
@@ -73,14 +73,14 @@ const About = () => {
             </div>
           </TechnologyCategoryItem>
           <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1.2}>
-            <div>Databases</div>
+            <div>{translation.about.databases}</div>
             <div>
               <div>PostgreSQL</div>
               <div>Cosmos DB</div>
             </div>
           </TechnologyCategoryItem>
           <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1.4}>
-            <div>Cloud Services</div>
+            <div>{translation.about.cloudServices}</div>
             <div>
               <div>Heroku</div>
               <div>AWS S3</div>
@@ -90,7 +90,7 @@ const About = () => {
             </div>
           </TechnologyCategoryItem>
           <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1.6}>
-            <div>Project Management</div>
+            <div>{translation.about.projectManagement}</div>
             <div>
               <div>Trello</div>
               <div>Jira</div>

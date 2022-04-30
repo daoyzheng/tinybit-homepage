@@ -1,15 +1,17 @@
 import Head from "next/head"
-import { useRouter } from "next/router"
-import { createContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { LocaleContextProvider } from "../context/LocaleContext"
 import { ScrollContextProvider } from "../context/ScrollContext"
 import Topbar from "../topbar/Topbar"
 import { Main } from "./Layout.styled"
 
 const Layout: React.FC = ({ children }) => {
-  const router = useRouter()
-  const { locale } = router
-  const [currentLocale, setCurrentLocale] = useState(locale)
+  useEffect(() => {
+    const locale = window.localStorage.getItem('locale')
+    if (locale)
+      setCurrentLocale(locale)
+  })
+  const [currentLocale, setCurrentLocale] = useState('')
   const handleLocaleChange = (locale: string) => {
     setCurrentLocale(locale)
   }

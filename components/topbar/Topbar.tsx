@@ -1,7 +1,4 @@
-import { route } from "next/dist/server/router"
-import { useRouter } from "next/router"
-import path from "path"
-import { createContext, useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { ScrollContext } from "../context/ScrollContext"
 import Logo from "../logo/Logo"
 import { SettingsWrapper, SettingWrapper, TopbarWrapper } from "./Topbar.styled"
@@ -12,20 +9,25 @@ interface Props {
 
 const Topbar = ({ onLocaleChange }: Props) => {
   const [isMinimize, setIsMinimize] = useState(false)
-  const [locale, setLocale] = useState('en')
-  const router = useRouter()
+  const [locale, setLocale] = useState('')
   const { scrollY } = useContext(ScrollContext)
   const handleLocaleChange = (localization: string) => {
     setLocale(localization)
-    const { pathname, asPath, query } = router
-    router.push({ pathname, query }, asPath, { locale: localization })
     onLocaleChange(localization)
+    localStorage.setItem('locale', localization)
   }
   useEffect(() => {
     setIsMinimize(scrollY > 160)
-    const localization = router.locale
-    setLocale(localization === 'en' ? 'en' : 'zh')
-  }, [scrollY, router])
+    const locale = localStorage.getItem('locale')
+    if (locale) {
+      setLocale(locale === 'zh' ? 'zh' : 'en')
+      localStorage.setItem('locale', locale === 'zh' ? 'zh' : 'en')
+    }
+    else {
+      setLocale('en')
+      localStorage.setItem('locale', 'en')
+    }
+  }, [scrollY])
   return (
     <TopbarWrapper isMinimize={isMinimize}>
       <Logo className="cursor-pointer" />

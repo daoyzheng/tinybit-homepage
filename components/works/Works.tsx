@@ -1,6 +1,8 @@
 import { useCallback, useContext, useEffect, useState } from "react"
 import useReplaceStateEvent from "../../hooks/customReplaceStateEvent"
+import { LocaleContext } from "../context/LocaleContext"
 import { ScrollContext } from "../context/ScrollContext"
+import i18n from "../i18n"
 import Icon from "../icon/Icon"
 import { Watermark } from "../index/index.styled"
 import Subheading from "../subheading/Subheading"
@@ -8,6 +10,8 @@ import Img from "./Img"
 import { WorksDescriptionWrapper, WorksWrapper, WorkWrapper } from "./Works.styled"
 
 const Works = () => {
+  const locale = useContext(LocaleContext)
+  const translation = locale === 'en' ? i18n.en : i18n.zh
   const [isAnimating, setIsAnimating] = useState(false)
   const [translateRate, setTranslateRate] = useState(0)
   const { scrollY, viewportHeight, viewportWidth } = useContext(ScrollContext)
@@ -41,13 +45,13 @@ const Works = () => {
   }, [setWorksObserver, handleRateChange])
   return (
     <>
-      <Watermark translateRate={translateRate}>Works</Watermark>
+      <Watermark translateRate={translateRate}>{translation.nav.works}</Watermark>
       <WorksWrapper className="w-2/3 mb-16" id="works-wrapper">
-        <Subheading isAnimating={isAnimating} animationDelay={0}>Works</Subheading>
+        <Subheading isAnimating={isAnimating} animationDelay={0}>{translation.nav.works}</Subheading>
         <WorkWrapper className="mt-12 flex gap-6 lg:flex-nowrap flex-wrap" isAnimating={isAnimating} animationDelay={0.5}>
           <Img src="/blog_light.png" url="https://blog.tinybit.me"/>
           <WorksDescriptionWrapper>
-            <a href="https://blog.tinybit.me" target="_blank" rel="noreferrer">Personal Blog</a>
+            <a href="https://blog.tinybit.me" target="_blank" rel="noreferrer">{translation.works.personalBlog}</a>
             <div className="gap-4">
               <div>Next.js</div>
               <div>React</div>
@@ -57,7 +61,7 @@ const Works = () => {
               <div>Strapi</div>
             </div>
             <div className="mt-5">
-              A minimalist personal blog utilizing Strapi, a headless CMS, along with Next.js for static site generation.
+              {translation.works.blogDescription}
             </div>
             <div className="mt-5">
               <Icon url="https://github.com/daoyzheng/tinybit-blog-frontend" src="/github_icon.png" tooltip="Project Repo"/>

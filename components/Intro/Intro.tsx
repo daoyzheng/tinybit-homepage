@@ -2,10 +2,12 @@ import Image from "next/image"
 import { useCallback, useContext, useEffect, useState } from "react"
 import useReplaceStateEvent from "../../hooks/customReplaceStateEvent"
 import { LocaleContext } from "../context/LocaleContext"
+import i18n from "../i18n"
 import { Highlight, ImageWrapper, IntroWrapper } from "./Intro.styled"
 
 const Intro = () => {
   const locale = useContext(LocaleContext)
+  const translation = locale === 'en' ? i18n.en : i18n.zh
   const triggerReplaceStateEvent = useReplaceStateEvent('')
   const setIntroObserver = useCallback(() => {
     const introObserverOptions = {
@@ -15,10 +17,8 @@ const Intro = () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           if (window.location.hash.length > 1) {
-            history.replaceState({}, '', locale)
+            history.replaceState({}, '', '/')
             triggerReplaceStateEvent()
-          } else {
-            history.replaceState({}, '', locale)
           }
         }
       })
@@ -26,16 +26,16 @@ const Intro = () => {
     const intro = document.querySelector('#intro')
     if (intro)
       introObserver.observe(intro)
-  }, [triggerReplaceStateEvent, locale])
+  }, [triggerReplaceStateEvent])
   useEffect(() => {
     setIntroObserver()
   }, [setIntroObserver])
   return (
     <>
       <IntroWrapper className="w-2/3" id="intro">
-        <h1>Hello, my name is</h1>
-        <h1>Dao Zheng</h1>
-        <div>and I&apos;m a <Highlight>Software Developer</Highlight>.</div>
+        <h1>{translation.intro.welcome}</h1>
+        <h1>{translation.intro.name}</h1>
+        <div>{translation.intro.connect}<Highlight>{translation.intro.softwareDeveloper}</Highlight></div>
         <ImageWrapper>
           <Image src="/mouse.png" width="50px" height="50px" alt="mouse" className="absolute bottom-0"/>
         </ImageWrapper>
