@@ -31,7 +31,7 @@ export const NavWrapper = styled.div`
   position: fixed;
   align-items: end;
   top: 160px;
-  left: 0%;
+  left: 1%;
   flex-direction: column;
   justify-content: space-between;
   border-right: 1px solid var(--red);
