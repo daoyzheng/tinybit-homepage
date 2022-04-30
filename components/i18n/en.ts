@@ -16,7 +16,7 @@ const en = {
   },
   about: {
     description: `
-      Hello! My name is Dao, and I love to learn and build software applications. I often spend my
+      Hello! My name is Dao and I love to learn and build software applications. I often spend my
       time taking on small projects to improve my skillsets. Currently, I'm in a role with a start-up company based in Calgary
       with experience as a full-stack and a front-end developer. When away from the screen, I enjoy being active by playing basketball and hiking.
     `,
@@ -34,7 +34,7 @@ const en = {
   contact: {
     title: 'Want to connect?',
     connect: 'Connect',
-    content: 'Feel free to shoot me an email if you have any questions, or just want to say hello, or is interested in coding, playing basketball, or hiking together.'
+    content: 'Feel free to shoot me an email if you have any questions, or just want to say hello.'
   }
 }
 
