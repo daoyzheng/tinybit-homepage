@@ -1,15 +1,31 @@
-import { useContext, useEffect, useState } from "react"
+import { route } from "next/dist/server/router"
+import { useRouter } from "next/router"
+import path from "path"
+import { createContext, useContext, useEffect, useState } from "react"
 import { ScrollContext } from "../context/ScrollContext"
 import Logo from "../logo/Logo"
 import { SettingsWrapper, SettingWrapper, TopbarWrapper } from "./Topbar.styled"
 
-const Topbar = () => {
+interface Props {
+  onLocaleChange: (locale: string) => void
+}
+
+const Topbar = ({ onLocaleChange }: Props) => {
   const [isMinimize, setIsMinimize] = useState(false)
   const [locale, setLocale] = useState('en')
+  const router = useRouter()
   const { scrollY } = useContext(ScrollContext)
+  const handleLocaleChange = (localization: string) => {
+    setLocale(localization)
+    const { pathname, asPath, query } = router
+    router.push({ pathname, query }, asPath, { locale: localization })
+    onLocaleChange(localization)
+  }
   useEffect(() => {
     setIsMinimize(scrollY > 160)
-  }, [scrollY])
+    const localization = router.locale
+    setLocale(localization === 'en' ? 'en' : 'zh')
+  }, [scrollY, router])
   return (
     <TopbarWrapper isMinimize={isMinimize}>
       <Logo className="cursor-pointer" />
@@ -20,7 +36,7 @@ const Topbar = () => {
             isMinimize={isMinimize}
             contentOnMinimize="Eng"
             content="English"
-            onClick={() => setLocale('en')}
+            onClick={() => handleLocaleChange('en')}
           />
           <span className="text-xs text-white">/</span>
           <SettingWrapper
@@ -28,7 +44,7 @@ const Topbar = () => {
             isMinimize={isMinimize}
             contentOnMinimize="中"
             content="中文"
-            onClick={() => setLocale('zh')}
+            onClick={() => handleLocaleChange('zh')}
           />
         </SettingsWrapper>
       </div>

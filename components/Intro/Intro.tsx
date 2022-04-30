@@ -1,13 +1,35 @@
 import Image from "next/image"
-import { useEffect } from "react"
+import { useCallback, useContext, useEffect, useState } from "react"
 import useReplaceStateEvent from "../../hooks/customReplaceStateEvent"
+import { LocaleContext } from "../context/LocaleContext"
 import { Highlight, ImageWrapper, IntroWrapper } from "./Intro.styled"
 
 const Intro = () => {
+  const locale = useContext(LocaleContext)
   const triggerReplaceStateEvent = useReplaceStateEvent('')
+  const setIntroObserver = useCallback(() => {
+    const introObserverOptions = {
+      threshold: 0.8
+    }
+    const introObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (window.location.hash.length > 1) {
+            history.replaceState({}, '', locale)
+            triggerReplaceStateEvent()
+          } else {
+            history.replaceState({}, '', locale)
+          }
+        }
+      })
+    }, introObserverOptions)
+    const intro = document.querySelector('#intro')
+    if (intro)
+      introObserver.observe(intro)
+  }, [triggerReplaceStateEvent, locale])
   useEffect(() => {
-    setIntroObserver(triggerReplaceStateEvent)
-  }, [triggerReplaceStateEvent])
+    setIntroObserver()
+  }, [setIntroObserver])
   return (
     <>
       <IntroWrapper className="w-2/3" id="intro">
@@ -23,22 +45,3 @@ const Intro = () => {
 }
 
 export default Intro
-
-function setIntroObserver(triggerReplaceStateEvent: () => void) {
-  const introObserverOptions = {
-    threshold: 0.8
-  }
-  const introObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        if (window.location.hash.length > 1) {
-          history.replaceState({}, '', '/')
-          triggerReplaceStateEvent()
-        }
-      }
-    })
-  }, introObserverOptions)
-  const intro = document.querySelector('#intro')
-  if (intro)
-    introObserver.observe(intro)
-}

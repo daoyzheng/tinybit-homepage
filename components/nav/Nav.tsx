@@ -1,15 +1,12 @@
 import Link from "next/link"
 import { useRouter } from "next/router";
-import { useCallback, useContext, useEffect, useState } from "react";
-import { ScrollContext } from "../context/ScrollContext";
+import { useCallback, useEffect, useState } from "react";
 import Icon from "../icon/Icon";
 import { NavWrapper, NavItemWrapper } from "./Nav.styled"
 
 const Nav = () => {
   const [currentHash, setCurrentHash] = useState('')
   const [okToChange, setOkToChange] = useState(true)
-  const [useIcon, setUseIcon] = useState(false)
-  const { viewportWidth } = useContext(ScrollContext)
   const router = useRouter()
   const onReplaceState = useCallback((e: CustomEventInit<string>) => {
     if (okToChange) {
@@ -17,19 +14,17 @@ const Nav = () => {
       setCurrentHash(hash || '')
     }
   },[okToChange])
-  const handleViewportChange = useCallback(() => {
-    if (viewportWidth < 1280) {
-      setUseIcon(true)
-    }
-  }, [viewportWidth])
+  const setEventListener = useCallback(() => {
+    document.addEventListener('onreplacestate', onReplaceState)
+  }, [onReplaceState])
+
   useEffect(() => {
-    handleViewportChange()
     if (router.asPath && router.asPath.length > 1) {
       setCurrentHash(router.asPath.split('/')[1])
     }
-    document.addEventListener('onreplacestate', onReplaceState)
+    setEventListener()
     return () => document.removeEventListener('onreplacestate', onReplaceState)
-  }, [router, onReplaceState, handleViewportChange])
+  }, [router, setEventListener, onReplaceState])
   const handleHashChange = (hash: string) => {
     setCurrentHash(hash)
     setOkToChange(false)
