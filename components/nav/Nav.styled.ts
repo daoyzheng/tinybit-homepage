@@ -59,6 +59,8 @@ export const NavWrapper = styled.div`
     bottom: 60px;
     padding-bottom: 30px;
     margin-right: 10px;
+    position: relative;
+    bottom: 20px;
     /* align-items: end; */
     > :first-child {
       margin: 10px 0px;
