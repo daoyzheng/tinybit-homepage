@@ -8,7 +8,7 @@ const fadeIn = keyframes`
     @media (min-width: 1280px) {
       bottom: 0%;
     }
-    bottom: 140px;
+    bottom: 160px;
   }
 `
 
