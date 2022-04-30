@@ -119,7 +119,7 @@ export const ImageWrapper = styled.div`
   animation: ${fadeIn} 0.8s ease 5.0s forwards, ${scale} .5s ease 5.2s forwards;
   position: absolute;
   bottom: 0;
-  right: -20px;
+  left: 500px;
   @media (min-width: 1280px) {
     right: 20px;
   }

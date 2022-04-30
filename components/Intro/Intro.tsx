@@ -36,9 +36,9 @@ const Intro = () => {
         <h1>{translation.intro.welcome}</h1>
         <h1>{translation.intro.name}</h1>
         <div>{translation.intro.connect}<Highlight>{translation.intro.softwareDeveloper}</Highlight></div>
-        <ImageWrapper>
+        {/* <ImageWrapper>
           <Image src="/mouse.png" width="50px" height="50px" alt="mouse" className="absolute bottom-0"/>
-        </ImageWrapper>
+        </ImageWrapper> */}
       </IntroWrapper>
     </>
   )
