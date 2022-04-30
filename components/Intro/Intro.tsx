@@ -11,7 +11,7 @@ const Intro = () => {
   const triggerReplaceStateEvent = useReplaceStateEvent('')
   const setIntroObserver = useCallback(() => {
     const introObserverOptions = {
-      threshold: 0.5
+      threshold: 0.8
     }
     const introObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
