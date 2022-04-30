@@ -2,13 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 const fadeIn = keyframes`
   0% {
-    bottom: 100%;
-  }
-  100% {
-    @media (min-width: 1280px) {
-      bottom: 0%;
-    }
-    bottom: 200px;
+    height: 0;
   }
 `
 
@@ -31,6 +25,7 @@ export const NavWrapper = styled.div`
   position: fixed;
   align-items: end;
   top: 160px;
+  height: calc(100vh - 160px);
   left: 1%;
   flex-direction: column;
   justify-content: space-between;
