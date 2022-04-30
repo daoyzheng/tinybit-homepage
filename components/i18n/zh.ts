@@ -2,7 +2,7 @@ const zh = {
   intro: {
     welcome: '你好, 我叫',
     name: '郑道远',
-    connect: '我是一个',
+    connect: '我是一名',
     softwareDeveloper: '软件开发员'
   },
   nav: {
