@@ -49,7 +49,7 @@ const Works = () => {
       <WorksWrapper className="w-2/3 mb-16" id="works-wrapper">
         <Subheading isAnimating={isAnimating} animationDelay={0}>{translation.nav.works}</Subheading>
         <WorkWrapper className="mt-12 flex gap-6 lg:flex-nowrap flex-wrap" isAnimating={isAnimating} animationDelay={0.5}>
-          <Img src="/blog_light.png" url="https://blog.tinybit.me"/>
+          <Img src="/blog_light.png" url="https://blog.daozheng.me"/>
           <WorksDescriptionWrapper>
             <a href="https://blog.daozheng.me" target="_blank" rel="noreferrer">{translation.works.personalBlog}</a>
             <div className="gap-4">
