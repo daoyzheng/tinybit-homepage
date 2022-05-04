@@ -67,7 +67,7 @@ const About = () => {
           <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1}>
             <div>{translation.about.backEnd}</div>
             <div>
-              <div>.NET</div>
+              <div>.NET Core</div>
               <div>Node.js</div>
               <div>Koa</div>
             </div>
