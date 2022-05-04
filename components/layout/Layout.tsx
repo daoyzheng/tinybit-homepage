@@ -21,6 +21,7 @@ const Layout: React.FC = ({ children }) => {
         <title>Dao Zheng</title>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="description" content="Dao's personal website" />
+        <meta name="keywords" content="web development, programming, lifestyle" />
         <meta property="og:title" content="Dao Zheng"/>
         <meta name="og:description" content="Dao's personal website" />
         <meta property="og:url" content="https://snipcart.com/"/>
