@@ -58,7 +58,7 @@ const Nav = () => {
       <div>
         <Icon url="https://github.com/daoyzheng" src="/github.png" tooltip="Github" isHorizontal dense/>
         <Icon url="https://ca.linkedin.com/in/daozheng" src="/linkedin.png" tooltip={translation.nav.linkedin} isHorizontal dense/>
-        <Icon url="https://blog.tinybit.me" src="/blogging.png" tooltip={translation.nav.blog} isHorizontal dense/>
+        <Icon url="https://blog.daozheng.me" src="/blogging.png" tooltip={translation.nav.blog} isHorizontal dense/>
         {/* <Icon url="" src="/cv.png" tooltip={translation.nav.resume} isHorizontal dense/> */}
       </div>
     </NavWrapper>

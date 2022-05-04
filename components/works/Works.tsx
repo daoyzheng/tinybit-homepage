@@ -51,7 +51,7 @@ const Works = () => {
         <WorkWrapper className="mt-12 flex gap-6 lg:flex-nowrap flex-wrap" isAnimating={isAnimating} animationDelay={0.5}>
           <Img src="/blog_light.png" url="https://blog.tinybit.me"/>
           <WorksDescriptionWrapper>
-            <a href="https://blog.tinybit.me" target="_blank" rel="noreferrer">{translation.works.personalBlog}</a>
+            <a href="https://blog.daozheng.me" target="_blank" rel="noreferrer">{translation.works.personalBlog}</a>
             <div className="gap-4">
               <div>Next.js</div>
               <div>React</div>
