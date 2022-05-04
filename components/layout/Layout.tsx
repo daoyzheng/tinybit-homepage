@@ -24,7 +24,7 @@ const Layout: React.FC = ({ children }) => {
         <meta name="keywords" content="web development, programming, lifestyle" />
         <meta property="og:title" content="Dao Zheng"/>
         <meta name="og:description" content="Dao's personal website" />
-        <meta property="og:url" content="https://snipcart.com/"/>
+        <meta property="og:url" content="https://daozheng.me/"/>
         <meta property="og:type" content="website"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
