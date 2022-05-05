@@ -20,10 +20,10 @@ const Layout: React.FC = ({ children }) => {
       <Head>
         <title>Dao Zheng</title>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="description" content="Dao's personal website" />
         <meta name="keywords" content="web development, programming, lifestyle" />
+        <meta name="description" content="Dao Zheng is a software developer who loves to learn and build software applications." />
         <meta property="og:title" content="Dao Zheng"/>
-        <meta name="og:description" content="Dao's personal website" />
+        <meta name="og:description" content="Dao Zheng is a software developer who loves to learn and build software applications." />
         <meta property="og:url" content="https://daozheng.me/"/>
         <meta property="og:type" content="website"/>
         <link rel="icon" href="/favicon.ico" />
