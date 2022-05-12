@@ -25,7 +25,7 @@ const Works = () => {
         if (entry.isIntersecting) {
           setIsAnimating(true)
           if (window.location.hash !== '#works') {
-            history.pushState({}, '', '#works')
+            history.replaceState({}, '', '#works')
             triggerReplaceStateEvent()
           }
         }

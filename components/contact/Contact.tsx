@@ -29,7 +29,7 @@ const Contact = () => {
         if (entry.isIntersecting) {
           setIsAnimating(true)
           if (window.location.hash !== '#contact') {
-            history.pushState({}, '', '#contact')
+            history.replaceState({}, '', '#contact')
             triggerReplaceStateEvent()
           }
         }

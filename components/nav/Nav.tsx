@@ -40,17 +40,17 @@ const Nav = () => {
     <NavWrapper className="space-y-3">
       <div>
         <NavItemWrapper isSelected={currentHash === '#about'} onClick={() => handleHashChange('#about')}>
-          <Link href="#about" passHref>
+          <Link href="#about" passHref replace>
             <a>{translation.nav.about}</a>
           </Link>
         </NavItemWrapper>
         <NavItemWrapper isSelected={currentHash === '#works'} onClick={() => handleHashChange('#works')}>
-          <Link href="#works">
+          <Link href="#works" replace>
             <a>{translation.nav.works}</a>
           </Link>
         </NavItemWrapper>
         <NavItemWrapper isSelected={currentHash === '#contact'} onClick={() => handleHashChange('#contact')}>
-          <Link href="#contact">
+          <Link href="#contact" replace>
             <a>{translation.nav.contact}</a>
           </Link>
         </NavItemWrapper>

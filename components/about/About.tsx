@@ -30,7 +30,7 @@ const About = () => {
         if (entry.isIntersecting) {
           setIsAnimating(true)
           if (window.location.hash !== '#about') {
-            history.pushState({}, '', '#about')
+            history.replaceState({}, '', '#about')
             triggerReplaceStateEvent()
           }
         }
