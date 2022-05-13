@@ -60,6 +60,7 @@ const About = () => {
               <div>React</div>
               <div>Next.js</div>
               <div>TypeScript</div>
+              <div>Quasar Framework</div>
               <div>Styled Components</div>
               <div>TailwindCSS</div>
             </div>
