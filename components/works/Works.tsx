@@ -49,6 +49,26 @@ const Works = () => {
       <WorksWrapper className="w-2/3 mb-16" id="works-wrapper">
         <Subheading isAnimating={isAnimating} animationDelay={0}>{translation.nav.works}</Subheading>
         <WorkWrapper className="mt-12 flex gap-6 lg:flex-nowrap flex-wrap" isAnimating={isAnimating} animationDelay={0.5}>
+          <Img src="/beardbees.png"/>
+          <WorksDescriptionWrapper>
+            <a target="_blank" rel="noreferrer">BeardBees [WIP]</a>
+            <div className="gap-4">
+              <div>React</div>
+              <div>Styled Components</div>
+              <div>TailwindCSS</div>
+              <div>TypeScript</div>
+              <div>.NET Core</div>
+              <div>PostgreSQL</div>
+            </div>
+            <div className="mt-5">
+              {translation.works.beardbeesDescription}
+            </div>
+            <div className="mt-5">
+              {/* <Icon url="https://github.com/daoyzheng/tinybit-blog-frontend" src="/github_icon.png" tooltip="Project Repo"/> */}
+            </div>
+          </WorksDescriptionWrapper>
+        </WorkWrapper>
+        <WorkWrapper className="mt-12 flex gap-6 lg:flex-nowrap flex-wrap" isAnimating={isAnimating} animationDelay={0.8}>
           <Img src="/blog_light.png" url="https://blog.daozheng.me"/>
           <WorksDescriptionWrapper>
             <a href="https://blog.daozheng.me" target="_blank" rel="noreferrer">{translation.works.personalBlog}</a>

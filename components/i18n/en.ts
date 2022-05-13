@@ -29,7 +29,8 @@ const en = {
   },
   works: {
     personalBlog: 'Personal Blog',
-    blogDescription: 'A minimalist personal blog utilizing Strapi, a headless CMS, along with Next.js for static site generation.'
+    blogDescription: 'A minimalist personal blog utilizing Strapi, a headless CMS, along with Next.js for static site generation.',
+    beardbeesDescription: 'An online platform for family to connect with each other.'
   },
   contact: {
     title: 'Want to connect?',

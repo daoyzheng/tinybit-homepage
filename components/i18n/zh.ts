@@ -24,7 +24,8 @@ const zh = {
   },
   works: {
     personalBlog: '个人博客',
-    blogDescription: '一个使用无头 CMS 和 Next.js 生成静态站点的极简个人博客。'
+    blogDescription: '一个使用无头 CMS 和 Next.js 生成静态站点的极简个人博客。',
+    beardbeesDescription: '一个家庭相互分享的在线平台。'
   },
   contact: {
     title: '想要联系我？',
