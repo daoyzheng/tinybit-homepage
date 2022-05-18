@@ -58,7 +58,7 @@ export const WorkWrapper = styled.div<WorkWrapperProps>`
 `
 
 export const WorksDescriptionWrapper = styled.div`
-  width: 600px;
+  width: 800px;
   > :nth-child(1) {
     font-size: 20px;
     width: fit-content;
