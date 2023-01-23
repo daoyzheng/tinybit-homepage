@@ -11,7 +11,8 @@ const zh = {
     contact: '联系',
     linkedin: '领英',
     blog: '博客',
-    resume: '简历'
+    resume: '简历',
+    youtube: 'Youtube'
   },
   about: {
     description: '你好! 我叫郑道远, 我喜欢学习编程和制作软件应用程序。我经常会花时间做一些小项目来提高我的技术。目前，我在卡尔加里的一家初创公司任职并具有作为全栈和前端开发人员的经验。平时, 我喜欢打篮球和远足。',

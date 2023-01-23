@@ -12,7 +12,8 @@ const en = {
     contact: 'Contact',
     linkedin: 'Linkedin',
     blog: 'Blog',
-    resume: 'Resume'
+    resume: 'Resume',
+    youtube: 'Youtube'
   },
   about: {
     description: `
