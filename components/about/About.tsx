@@ -71,6 +71,7 @@ const About = () => {
               <div>.NET Core</div>
               <div>Node.js</div>
               <div>Koa</div>
+              <div>Fastify</div>
             </div>
           </TechnologyCategoryItem>
           <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1.2}>
@@ -81,6 +82,14 @@ const About = () => {
             </div>
           </TechnologyCategoryItem>
           <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1.4}>
+            <div>{translation.about.orms}</div>
+            <div>
+              <div>Entity Framework</div>
+              <div>Knex</div>
+              <div>Prisma</div>
+            </div>
+          </TechnologyCategoryItem>
+          <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1.6}>
             <div>{translation.about.cloudServices}</div>
             <div>
               <div>Heroku</div>
@@ -90,7 +99,7 @@ const About = () => {
               <div>Azure Api Management</div>
             </div>
           </TechnologyCategoryItem>
-          <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1.6}>
+          <TechnologyCategoryItem isAnimating={isAnimating} animationDelay={1.8}>
             <div>{translation.about.projectManagement}</div>
             <div>
               <div>Trello</div>

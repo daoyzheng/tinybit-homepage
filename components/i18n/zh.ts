@@ -20,6 +20,7 @@ const zh = {
     frontEnd: '前端',
     backEnd: '后端',
     databases: '数据库',
+    orms: 'ORMs',
     cloudServices: '云服务',
     projectManagement: '项目管理'
   },

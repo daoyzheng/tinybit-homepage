@@ -25,6 +25,7 @@ const en = {
     frontEnd: 'Front-end',
     backEnd: 'Back-end',
     databases: 'Databases',
+    orms: 'ORMs',
     cloudServices: 'Cloud Services',
     projectManagement: 'Project Management'
   },
